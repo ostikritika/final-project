@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 // KMC Urban Planning Commission (सहरी योजना आयोग) Program Data with mappings to SDG, ISO 37120, and SCI 2025
 
 export interface UrbanPlanningProgram {
@@ -216,7 +223,7 @@ function calculateLinkageScore(direct: string, indirect: string): number {
 // Urban Planning Commission Programs from CSV
 export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
   {
-    id: "459",
+    id: "1",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
@@ -234,7 +241,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "460",
+    id: "2",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
@@ -255,7 +262,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "461",
+    id: "3",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "योजना तर्जुमा र कार्यान्वयन",
@@ -273,7 +280,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "462",
+    id: "4",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
@@ -291,7 +298,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "463",
+    id: "5",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
@@ -309,7 +316,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "464",
+    id: "6",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
@@ -330,7 +337,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "465",
+    id: "7",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
@@ -348,7 +355,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "466",
+    id: "8",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
@@ -366,7 +373,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "467",
+    id: "9",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
@@ -387,7 +394,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "468",
+    id: "10",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
@@ -405,7 +412,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "469",
+    id: "11",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
@@ -424,7 +431,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "470",
+    id: "12",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
@@ -445,7 +452,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "471",
+    id: "13",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
@@ -466,7 +473,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "472",
+    id: "14",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
@@ -487,7 +494,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "473",
+    id: "15",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "योजना तर्जुमा र कार्यान्वयन",
@@ -508,7 +515,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "474",
+    id: "16",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
@@ -529,7 +536,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "475",
+    id: "17",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
@@ -550,7 +557,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "476",
+    id: "18",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
@@ -568,7 +575,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "477",
+    id: "19",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
@@ -586,7 +593,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "478",
+    id: "20",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
@@ -607,7 +614,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "479",
+    id: "21",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
@@ -628,7 +635,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "480",
+    id: "22",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
@@ -649,7 +656,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "481",
+    id: "23",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
@@ -670,7 +677,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "482",
+    id: "24",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
@@ -688,7 +695,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "483",
+    id: "25",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
@@ -710,7 +717,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "484",
+    id: "26",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
@@ -732,7 +739,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "485",
+    id: "27",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
@@ -750,7 +757,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "486",
+    id: "28",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
@@ -771,7 +778,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "487",
+    id: "29",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
@@ -792,7 +799,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "488",
+    id: "30",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
@@ -813,7 +820,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "489",
+    id: "31",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
@@ -834,7 +841,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "490",
+    id: "32",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
@@ -855,7 +862,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "491",
+    id: "33",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
@@ -876,7 +883,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "492",
+    id: "34",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
@@ -894,7 +901,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "493",
+    id: "34",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
@@ -915,7 +922,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "494",
+    id: "35",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
@@ -933,7 +940,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "495",
+    id: "36",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
@@ -954,7 +961,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "496",
+    id: "37",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
@@ -972,7 +979,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "497",
+    id: "38",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
@@ -993,7 +1000,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "498",
+    id: "39",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "कानुन तथा न्याय",
@@ -1016,7 +1023,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
   },
   // Swarneem (स्वर्णीम) Category Programs
   {
-    id: "1199",
+    id: "40",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
@@ -1034,7 +1041,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "1200",
+    id: "41",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
@@ -1055,7 +1062,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "1201",
+    id: "42",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
@@ -1076,7 +1083,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "1202",
+    id: "43",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
