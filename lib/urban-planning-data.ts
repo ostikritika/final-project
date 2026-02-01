@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 // KMC Urban Planning Commission (सहरी योजना आयोग) Program Data with mappings to SDG, ISO 37120, and SCI 2025
 
 export interface UrbanPlanningProgram {
@@ -216,7 +223,7 @@ function calculateLinkageScore(direct: string, indirect: string): number {
 // Urban Planning Commission Programs from CSV
 export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
   {
-    id: "459",
+    id: "1",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
@@ -234,7 +241,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "460",
+    id: "2",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
@@ -255,7 +262,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "461",
+    id: "3",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "योजना तर्जुमा र कार्यान्वयन",
@@ -273,7 +280,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "462",
+    id: "4",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
@@ -291,7 +298,7 @@ export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
     projectPhase: generateProjectPhase(),
   },
   {
-    id: "463",
+    id: "5",
     department: "सहरी योजना आयोग",
     sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
     subSector: "शासन प्रणाली",
