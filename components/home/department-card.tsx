@@ -13,8 +13,7 @@ export function DepartmentCard({ department }: DepartmentCardProps) {
 
   const statusColors = {
     active: "bg-green-100 text-green-700 border-green-200",
-    planning: "bg-amber-100 text-amber-700 border-amber-200",
-    review: "bg-blue-100 text-blue-700 border-blue-200",
+    inactive: "bg-blue-100 text-blue-700 border-blue-200",
   }
 
   return (
@@ -27,9 +26,19 @@ export function DepartmentCard({ department }: DepartmentCardProps) {
             <div className={`p-3 rounded-xl ${department.bgColor}`}>
               <Icon className={`h-6 w-6 ${department.color}`} />
             </div>
-            <Badge variant="outline" className={statusColors[department.status]}>
-              {department.status === "active" ? "Active" : department.status === "planning" ? "Planning" : "Review"}
-            </Badge>
+  <Badge
+  variant="outline"
+  className={
+    department.status === "active"
+      ? "bg-green-800 text-white border-green-900"  // Dark green
+      : "bg-red-800 text-white border-red-900"      // Dark red
+  }
+>
+  {department.status === "active" ? "Active" : "Inactive"}
+</Badge>
+
+
+
           </div>
         </CardHeader>
 

@@ -29,7 +29,7 @@ export interface Department {
   borderColor: string
   programs: number
   budget: string
-  status: "active" | "planning" | "review"
+  status: "active" | "inactive" 
   href: string
 }
 
@@ -77,35 +77,7 @@ export const departments: Department[] = [
     status: "active",
     href: "/departments/education",
   },
-  {
-    id: "administration",
-    name: "Administration Deparment",
-    nameNepali: "प्रशासन विभाग",
-    description: "General administration, HR, and governance services",
-    icon: Landmark,
-    color: "text-slate-600",
-    bgColor: "bg-slate-50",
-    borderColor: "border-slate-200",
-    programs: 88,
-    budget: "NPR 792,730,000",
-    status: "active",
-    href: "/departments/administration",
-  },
-  {
-    id: "revenue",
-    name: "Revenue Department",
-    nameNepali: "राजश्व विभाग",
-    description: "Tax enforcement, revenue collection, and non-tax monitoring",
-    icon: Droplets,
-    color: "text-cyan-600",
-    bgColor: "bg-cyan-50",
-    borderColor: "border-cyan-200",
-    programs: 14,
-    budget: "NPR 106,100,000",
-    status: "active",
-    href: "/departments/water-sanitation",
-  },
-  {
+{
     id: "security",
     name: "Disaster Department",
     nameNepali: "सुरक्षा तथा विपद् व्यवस्थापन",
@@ -119,6 +91,37 @@ export const departments: Department[] = [
     status: "active",
     href: "/departments/security",
   },
+
+
+  {
+    id: "administration",
+    name: "Administration Deparment",
+    nameNepali: "प्रशासन विभाग",
+    description: "General administration, HR, and governance services",
+    icon: Landmark,
+    color: "text-slate-600",
+    bgColor: "bg-slate-50",
+    borderColor: "border-slate-200",
+    programs: 88,
+    budget: "NPR 792,730,000",
+    status: "inactive",
+    href: "/departments/administration",
+  },
+  {
+    id: "revenue",
+    name: "Revenue Department",
+    nameNepali: "राजश्व विभाग",
+    description: "Tax enforcement, revenue collection, and non-tax monitoring",
+    icon: Droplets,
+    color: "text-cyan-600",
+    bgColor: "bg-cyan-50",
+    borderColor: "border-cyan-200",
+    programs: 14,
+    budget: "NPR 106,100,000",
+    status: "inactive",
+    href: "/departments/water-sanitation",
+  },
+  
   {
     id: "public-work",
     name: "Public Work Department",
@@ -130,7 +133,7 @@ export const departments: Department[] = [
     borderColor: "border-pink-200",
     programs: 81,
     budget: "NPR 10,850,156,000",
-    status: "active",
+    status: "inactive",
     href: "/departments/social-welfare",
   },
   {
@@ -144,7 +147,7 @@ export const departments: Department[] = [
     borderColor: "border-indigo-200",
     programs: 24,
     budget: "NPR 64,500,000",
-    status: "review",
+    status: "inactive",
     href: "/departments/law",
   },
   {
@@ -158,7 +161,7 @@ export const departments: Department[] = [
     borderColor: "border-teal-200",
     programs: 164,
     budget: "NPR 2,355,403,000",
-    status: "active",
+    status: "inactive",
     href: "/departments/planning",
   },
   {
@@ -172,7 +175,7 @@ export const departments: Department[] = [
     borderColor: "border-emerald-200",
     programs: 8,
     budget: "NPR 315,600,000",
-    status: "active",
+    status: "inactive",
     href: "/departments/revenue",
   },
   {
@@ -186,7 +189,7 @@ export const departments: Department[] = [
     borderColor: "border-yellow-200",
     programs: 19,
     budget: "NPR 263,020,000",
-    status: "active",
+    status: "inactive",
     href: "/departments/infrastructure",
   },
   {
@@ -200,7 +203,7 @@ export const departments: Department[] = [
     borderColor: "border-green-200",
     programs: 149,
     budget: "NPR 1,344,970,000",
-    status: "active",
+    status: "inactive",
     href: "/departments/environment",
   },
   {
@@ -214,7 +217,7 @@ export const departments: Department[] = [
     borderColor: "border-violet-200",
     programs: 60,
     budget: "NPR 172,500,000",
-    status: "planning",
+    status: "inactive",
     href: "/departments/it",
   },
   {
@@ -228,7 +231,7 @@ export const departments: Department[] = [
     borderColor: "border-stone-200",
     programs: 390,
     budget: "NPR 631,318,000",
-    status: "active",
+    status: "inactive",
     href: "/departments/heritage",
   },
   {
@@ -242,7 +245,7 @@ export const departments: Department[] = [
     borderColor: "border-sky-200",
     programs: 17,
     budget: "NPR 117,950,000",
-    status: "active",
+    status: "inactive",
     href: "/departments/human-resources",
   },
   {
@@ -256,7 +259,7 @@ export const departments: Department[] = [
     borderColor: "border-orange-200",
     programs: 59,
     budget: "NPR 54,500,000",
-    status: "active",
+    status: "inactive",
     href: "/departments/transportation",
   },
 ]
