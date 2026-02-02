@@ -63,7 +63,7 @@ export function ProgramTable() {
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div>
             <CardTitle className="text-lg font-semibold text-foreground">Program Registry / कार्यक्रम दर्ता</CardTitle>
-            <p className="text-sm text-muted-foreground mt-1">{filteredPrograms.length} programs found</p>
+            <p className="text-sm text-muted-foreground mt-1">{filteredPrograms.length} p rograms found</p>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3">

@@ -26,7 +26,7 @@ export function StatsCards() {
       title: "Total Budget",
       titleNp: "कुल बजेट",
       value: `रु. ${(totalBudget / 1000).toFixed(1)} करोड`,
-      icon: DollarSign,
+      //icon: DollarSign,
       color: "text-green-600",
       bgColor: "bg-green-50",
     },
