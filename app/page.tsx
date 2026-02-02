@@ -11,7 +11,7 @@ export default function HomePage() {
       <footer className="border-t border-border mt-8 py-6 bg-card">
         <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
           <p>© 2026 Kathmandu Metropolitan City | काठमाडौं महानगरपालिका</p>
-          <p className="mt-1">Program Mapping System v1.0 - Aligned with SDG, ISO 37120, and SCI 2025</p>
+          <p className="mt-1">Program Mapping System - Aligned with SDG, ISO 37120, and SCI 2025</p>
         </div>
       </footer>
     </div>

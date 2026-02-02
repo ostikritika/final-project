@@ -40,7 +40,7 @@ export interface KMCProgram {
 export const thematicAreas = [
   {
     id: "health-treatment",
-    name: "Health Treatment Services",
+    name: "Health Treatment Services ",
     nameNp: "स्वास्थ्य उपचार सेवाहरू",
     description: "Direct health care delivery including curative and preventive services",
     color: "#0891B2",

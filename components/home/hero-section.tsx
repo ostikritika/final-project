@@ -37,7 +37,7 @@ export function HeroSection() {
               <p className="text-sm text-muted-foreground">Departments</p>
             </div>
             <div className="text-center">
-              <p className="text-3xl font-bold text-foreground">400+</p>
+              <p className="text-3xl font-bold text-foreground">1000+</p>
               <p className="text-sm text-muted-foreground">Programs</p>
             </div>
             <div className="text-center">
@@ -45,8 +45,8 @@ export function HeroSection() {
               <p className="text-sm text-muted-foreground">Wards</p>
             </div>
             <div className="text-center">
-              <p className="text-3xl font-bold text-foreground">NPR 11B</p>
-              <p className="text-sm text-muted-foreground">Annual Budget</p>
+              <p className="text-3xl font-bold text-foreground">NPR 25,764,341,000</p>
+              <p className="text-sm text-muted-foreground">Annual Budget(~26 Arab)</p>
             </div>
           </div>
         </div>
