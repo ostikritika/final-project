@@ -3,7 +3,7 @@ import { Building2, MapPin } from "lucide-react"
 
 export function HeroSection() {
   return (
-    <section className="relative bg-gradient-to-br from-primary/5 via-background to-primary/10 border-b border-border">
+    <section className="relative bg-linear-to-br from-primary/5 via-background to-primary/10 border-b border-border">
       <div className="container mx-auto px-4 py-12 md:py-16">
         <div className="flex flex-col items-center text-center space-y-6">
           {/* Logo and Badge */}
@@ -37,7 +37,7 @@ export function HeroSection() {
               <p className="text-sm text-muted-foreground">Departments</p>
             </div>
             <div className="text-center">
-              <p className="text-3xl font-bold text-foreground">400+</p>
+              <p className="text-3xl font-bold text-foreground">1000+</p>
               <p className="text-sm text-muted-foreground">Programs</p>
             </div>
             <div className="text-center">
@@ -45,7 +45,7 @@ export function HeroSection() {
               <p className="text-sm text-muted-foreground">Wards</p>
             </div>
             <div className="text-center">
-              <p className="text-3xl font-bold text-foreground">NPR 11B</p>
+              <p className="text-3xl font-bold text-foreground">NPR 25,764,341,000 (~26 Arab)</p>
               <p className="text-sm text-muted-foreground">Annual Budget</p>
             </div>
           </div>

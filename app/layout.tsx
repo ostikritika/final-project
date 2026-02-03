@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: "KMC Departments | काठमाडौं महानगरपालिका",
   description:
     "Kathmandu Metropolitan City Department Program Mapping and Evaluation System aligned with SDG, ISO 37120, and SCI 2025 standards",
-  generator: "v0.app",
+  // generator: "v0.app",
   keywords: ["KMC", "Kathmandu", "Departments", "Health Programs", "SDG", "ISO 37120", "SCI 2025"],
   icons: {
     icon: [

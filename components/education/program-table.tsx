@@ -9,10 +9,13 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Progress } from "@/components/ui/progress"
-import { kmcPrograms, thematicAreas, type KMCProgram } from "@/lib/kmc-data"
+
+// ✅ Fixed import: use 'educationPrograms' instead of 'educationData'
+import { educationPrograms, thematicAreas } from "@/lib/education-data"
 import { LinkageScale } from "./linkage-scale"
 import { ProjectPhase } from "./project-phase"
 import { Search, Filter, Eye, ChevronLeft, ChevronRight } from "lucide-react"
+type EducationProgram = typeof educationPrograms[number]
 
 const ITEMS_PER_PAGE = 10
 
@@ -21,9 +24,10 @@ export function ProgramTable() {
   const [thematicFilter, setThematicFilter] = useState<string>("all")
   const [phaseFilter, setPhaseFilter] = useState<string>("all")
   const [currentPage, setCurrentPage] = useState(1)
-  const [selectedProgram, setSelectedProgram] = useState<KMCProgram | null>(null)
+  const [selectedProgram, setSelectedProgram] = useState<EducationProgram | null>(null)
 
-  const filteredPrograms = kmcPrograms.filter((program) => {
+  // ✅ Use 'educationPrograms' instead of 'educationData'
+  const filteredPrograms = educationPrograms.filter((program: EducationProgram) => {
     const matchesSearch =
       program.programName.toLowerCase().includes(search.toLowerCase()) ||
       program.mainProgram.toLowerCase().includes(search.toLowerCase())
@@ -34,7 +38,12 @@ export function ProgramTable() {
   })
 
   const totalPages = Math.ceil(filteredPrograms.length / ITEMS_PER_PAGE)
-  const paginatedPrograms = filteredPrograms.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE)
+  const paginatedPrograms = filteredPrograms.slice(
+    (currentPage - 1) * ITEMS_PER_PAGE,
+    currentPage * ITEMS_PER_PAGE
+  )
+  
+  // ...rest of your component remains unchanged
 
   const getThematicColor = (id: string) => {
     const area = thematicAreas.find((a) => a.id === id)
@@ -130,7 +139,7 @@ export function ProgramTable() {
             <TableHeader>
               <TableRow>
                 <TableHead className="w-16">ID</TableHead>
-                <TableHead className="min-w-75">Program Name</TableHead>
+                <TableHead className="min-w-[300px]">Program Name</TableHead>
                 <TableHead className="w-32">Thematic</TableHead>
                 <TableHead className="w-28">Budget</TableHead>
                 <TableHead className="w-36">Linkage (SDG/ISO/SCI)</TableHead>
