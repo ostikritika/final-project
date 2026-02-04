@@ -215,887 +215,1414 @@ function calculateLinkageScore(direct: string, indirect: string): number {
 
 // Urban Planning Commission Programs from CSV
 export const urbanPlanningPrograms: UrbanPlanningProgram[] = [
-  {
-    id: "459",
-    department: "सहरी योजना आयोग",
-    sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
-    subSector: "शासन प्रणाली",
-    mainProgram: "शासन प्रणाली",
-    programName: "आन्तरिक मूल्यांकन (Integrity Award Program) मापदण्ड सहित पुरस्कार",
-    budget: 1000,
-    budgetCode: "21135",
-    ward: "केन्द्र",
-    category: "मुख्य",
-    sdg: { direct: "16(16.6.1)", indirect: "No" },
-    iso37120: { direct: "No", indirect: "Governance" },
-    sci2025: { direct: "Pillar No. 2(Smart Governance)/ Component No.2.3 / Indicator: I-020", indirect: "No" },
-    thematicArea: "governance-systems",
-    linkageScores: { sdgScore: 5, isoScore: 2, sciScore: 5, linkageType: "concurrence" },
-    projectPhase: generateProjectPhase(),
+{
+  "id": "1",
+  "department": "सहरी योजना आयोग",
+  "sector": "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
+  "subSector": "शासन प्रणाली",
+  "mainProgram": "शासन प्रणाली",
+  "programName": "आन्तरिक मूल्यांकन (Integrity Award Program) मापदण्ड सहित पुरस्कार",
+  "budget": 1000,
+  "budgetCode": "21135",
+  "ward": "केन्द्र",
+  "category": "मुख्य",
+  "sdg": {
+    "direct": "16(16.6.1)",
+    "indirect": "No"
   },
-  {
-    id: "460",
-    department: "सहरी योजना आयोग",
-    sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
-    subSector: "शासन प्रणाली",
-    mainProgram: "शासन प्रणाली",
-    programName: "काठमाडौं महानगरको सिमानामा सार्वजनिक-निजी साझेदारी मोडलमा सवारी साधन धुने केन्द्र सञ्चालन सम्भाव्यता अध्ययन",
-    budget: 100,
-    budgetCode: "22411",
-    ward: "केन्द्र",
-    category: "मुख्य",
-    sdg: { direct: "No", indirect: "Partnerships for the Goals / Clean water and Sanitation" },
-    iso37120: { direct: "No", indirect: "Environment, Governance, Water and Sanitation" },
-    sci2025: {
-      direct: "Pillar No.2(Smart Governance)/ Component No.2.4 Urban Finance / Indicator: I-023",
-      indirect: "Urban land use / Built Environment",
-    },
-    thematicArea: "planning-implementation",
-    linkageScores: { sdgScore: 2, isoScore: 2, sciScore: 4, linkageType: "discussion" },
-    projectPhase: generateProjectPhase(),
+  "iso37120": {
+    "direct": "No",
+    "indirect": "Governance"
   },
-  {
-    id: "461",
-    department: "सहरी योजना आयोग",
-    sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
-    subSector: "योजना तर्जुमा र कार्यान्वयन",
-    mainProgram: "योजना तर्जुमा र कार्यान्वयन",
-    programName: "मध्यमकालिन खर्च संरचना तयारी",
-    budget: 500,
-    budgetCode: "22411",
-    ward: "केन्द्र",
-    category: "मुख्य",
-    sdg: { direct: "No", indirect: "Peace, Justice and Strong Institutions / Partnerships for the goals" },
-    iso37120: { direct: "No", indirect: "Governance, Economy, Finance" },
-    sci2025: { direct: "No", indirect: "Transparency and Accountability" },
-    thematicArea: "urban-finance",
-    linkageScores: { sdgScore: 2, isoScore: 2, sciScore: 2, linkageType: "declaration" },
-    projectPhase: generateProjectPhase(),
+  "sci2025": {
+    "direct": "Pillar No. 2(Smart Governance)/ Component No.2.3 / Indicator: I-020",
+    "indirect": "No"
   },
-  {
-    id: "462",
-    department: "सहरी योजना आयोग",
-    sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
-    subSector: "शासन प्रणाली",
-    mainProgram: "शासन प्रणाली",
-    programName: "योजना तथा कार्यक्रम छनौट कार्यको लागि SDG Localisation Manual निर्माण",
-    budget: 500,
-    budgetCode: "22411",
-    ward: "केन्द्र",
-    category: "मुख्य",
-    sdg: { direct: "No", indirect: "Peace, Justice and Strong Institutions / Partnerships for the goals" },
-    iso37120: { direct: "No", indirect: "Governance, Economy, Finance" },
-    sci2025: { direct: "No", indirect: "E-Services / Literacy Rate" },
-    thematicArea: "planning-implementation",
-    linkageScores: { sdgScore: 3, isoScore: 2, sciScore: 3, linkageType: "discussion" },
-    projectPhase: generateProjectPhase(),
+  "thematicArea": "governance-systems",
+  "linkageScores": {
+    "sdgScore": 5,
+    "isoScore": 2,
+    "sciScore": 5,
+    "linkageType": "concurrence"
   },
-  {
-    id: "463",
-    department: "सहरी योजना आयोग",
-    sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
-    subSector: "शासन प्रणाली",
-    mainProgram: "शासन प्रणाली",
-    programName: "Cosmopolitan City सम्भाव्यता तथा मापदण्ड अध्ययन",
-    budget: 500,
-    budgetCode: "22411",
-    ward: "केन्द्र",
-    category: "मुख्य",
-    sdg: { direct: "11.3.1", indirect: "Peace, Justice and Strong Institutions / Partnerships for the goals" },
-    iso37120: { direct: "No", indirect: "Governance, Economy, Recreation" },
-    sci2025: { direct: "No", indirect: "Economy Welfare / Innovation and Entrepreneurship" },
-    thematicArea: "planning-implementation",
-    linkageScores: { sdgScore: 5, isoScore: 2, sciScore: 3, linkageType: "research" },
-    projectPhase: generateProjectPhase(),
+  "projectPhase": generateProjectPhase()
+},
+{
+  "id": "2",
+  "department": "सहरी योजना आयोग",
+  "sector": "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
+  "subSector": "शासन प्रणाली",
+  "mainProgram": "शासन प्रणाली",
+  "programName": "काठमाडौं महानगरको सिमानामा सार्वजनिक-निजी साझेदारी मोडलमा सवारी साधन धुने केन्द्र सञ्चालन सम्भाव्यता अध्ययन",
+  "budget": 100,
+  "budgetCode": "22411",
+  "ward": "केन्द्र",
+  "category": "मुख्य",
+  "sdg": {
+    "direct": "No",
+    "indirect": "Partnerships for the Goals / Clean water and Sanitation"
   },
-  {
-    id: "464",
-    department: "सहरी योजना आयोग",
-    sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
-    subSector: "शासन प्रणाली",
-    mainProgram: "शासन प्रणाली",
-    programName: "उच्च जोखिम क्षेत्र नक्साङ्कन, पूर्व तयारीको लागि डिजिटल डेटा तयारि",
-    budget: 2000,
-    budgetCode: "22411",
-    ward: "केन्द्र",
-    category: "मुख्य",
-    sdg: { direct: "11(11.5.1 / 11.3.1)", indirect: "No" },
-    iso37120: { direct: "No", indirect: "Governance, Safety, Urban planning" },
-    sci2025: {
-      direct: "Pillar No. 2(Smart Governance)/ Component No.2.7(Disaster Resiliency)/ Indicator: I-031, 032, 033",
-      indirect: "Spatial Planning and Development Regulation",
-    },
-    thematicArea: "disaster-resilience",
-    linkageScores: { sdgScore: 5, isoScore: 3, sciScore: 5, linkageType: "research" },
-    projectPhase: generateProjectPhase(),
+  "iso37120": {
+    "direct": "No",
+    "indirect": "Environment, Governance, Water and Sanitation"
   },
-  {
-    id: "465",
-    department: "सहरी योजना आयोग",
-    sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
-    subSector: "शासन प्रणाली",
-    mainProgram: "शासन प्रणाली",
-    programName: "सहरी योजना आयोगको पदाधिकारी, सहायक विज्ञ तथा कर्मचारीहरुको थप सुबिधा",
-    budget: 10000,
-    budgetCode: "22411",
-    ward: "केन्द्र",
-    category: "मुख्य",
-    sdg: { direct: "No", indirect: "Peace, Justice and Strong Institutions / Partnerships for the goals" },
-    iso37120: { direct: "No", indirect: "Governance, Economy, Finance" },
-    sci2025: { direct: "No", indirect: "Transparency and Accountability" },
-    thematicArea: "governance-systems",
-    linkageScores: { sdgScore: 2, isoScore: 2, sciScore: 2, linkageType: "declaration" },
-    projectPhase: generateProjectPhase(),
+  "sci2025": {
+    "direct": "Pillar No.2(Smart Governance)/ Component No.2.4 Urban Finance / Indicator: I-023",
+    "indirect": "Urban land use / Built Environment"
   },
-  {
-    id: "466",
-    department: "सहरी योजना आयोग",
-    sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
-    subSector: "शासन प्रणाली",
-    mainProgram: "शासन प्रणाली",
-    programName: "सहरी योजना आयोगको पदाधिकारी तथा सहायक विज्ञहरूको पारिश्रमिक",
-    budget: 15000,
-    budgetCode: "22411",
-    ward: "केन्द्र",
-    category: "मुख्य",
-    sdg: { direct: "No", indirect: "Peace, Justice and Strong Institutions / Partnerships for the goals" },
-    iso37120: { direct: "No", indirect: "Governance, Economy, Finance" },
-    sci2025: { direct: "No", indirect: "Transparency and Accountability" },
-    thematicArea: "governance-systems",
-    linkageScores: { sdgScore: 2, isoScore: 2, sciScore: 2, linkageType: "declaration" },
-    projectPhase: generateProjectPhase(),
+  "thematicArea": "planning-implementation",
+  "linkageScores": {
+    "sdgScore": 2,
+    "isoScore": 2,
+    "sciScore": 4,
+    "linkageType": "discussion"
   },
-  {
-    id: "467",
-    department: "सहरी योजना आयोग",
-    sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
-    subSector: "शासन प्रणाली",
-    mainProgram: "शासन प्रणाली",
-    programName: "श्रम बैंकमार्फत जनशक्ति परिचालन",
-    budget: 20000,
-    budgetCode: "22411",
-    ward: "केन्द्र",
-    category: "मुख्य",
-    sdg: { direct: "8(8.3.1) / 17.16.1", indirect: "No" },
-    iso37120: { direct: "No", indirect: "Governance, Economy, Finance" },
-    sci2025: {
-      direct: "Pillar No.4(Smart Economy)/ Component No.4.3(Productivity and Job Creation) / Indicator: I-082, 081",
-      indirect: "Economic Welfare",
-    },
-    thematicArea: "economic-development",
-    linkageScores: { sdgScore: 5, isoScore: 2, sciScore: 5, linkageType: "concurrence" },
-    projectPhase: generateProjectPhase(),
+  "projectPhase": generateProjectPhase()
+},
+{
+  "id": "3",
+  "department": "सहरी योजना आयोग",
+  "sector": "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
+  "subSector": "योजना तर्जुमा र कार्यान्वयन",
+  "mainProgram": "योजना तर्जुमा र कार्यान्वयन",
+  "programName": "मध्यमकालिन खर्च संरचना तयारी",
+  "budget": 500,
+  "budgetCode": "22411",
+  "ward": "केन्द्र",
+  "category": "मुख्य",
+  "sdg": {
+    "direct": "No",
+    "indirect": "Peace, Justice and Strong Institutions / Partnerships for the goals"
   },
-  {
-    id: "468",
-    department: "सहरी योजना आयोग",
-    sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
-    subSector: "शासन प्रणाली",
-    mainProgram: "शासन प्रणाली",
-    programName: "बजेट विश्लेषण तथा समीक्षा, सहरी योजना आयोगको त्रैमासिक तथा वार्षिक प्रतिवेदन तयारी तथा छपाई",
-    budget: 500,
-    budgetCode: "22512",
-    ward: "केन्द्र",
-    category: "मुख्य",
-    sdg: { direct: "No", indirect: "Peace, Justice and Strong Institutions / Partnerships for the goals" },
-    iso37120: { direct: "No", indirect: "Governance, Economy, Finance" },
-    sci2025: { direct: "No", indirect: "Urban Finance" },
-    thematicArea: "urban-finance",
-    linkageScores: { sdgScore: 2, isoScore: 2, sciScore: 2, linkageType: "declaration" },
-    projectPhase: generateProjectPhase(),
+  "iso37120": {
+    "direct": "No",
+    "indirect": "Governance, Economy, Finance"
   },
-  {
-    id: "469",
-    department: "सहरी योजना आयोग",
-    sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
-    subSector: "शासन प्रणाली",
-    mainProgram: "शासन प्रणाली",
-    programName:
-      "स्थानीय व्यञ्जन, पेय पदार्थ, तेल लगायतका उत्पादन तथा कुकुर तिहार र म्ह पूजाको अन्तरराष्ट्रिय ब्रान्डिङ सम्बन्धि कार्यक्रम",
-    budget: 200,
-    budgetCode: "22522",
-    ward: "केन्द्र",
-    category: "मुख्य",
-    sdg: { direct: "8(8.3.1) / 12.3.1", indirect: "No" },
-    iso37120: { direct: "No", indirect: "Governance, Economy, Recreation" },
-    sci2025: { direct: "No", indirect: "Economy Welfare, Innovation and Entrepreneurship" },
-    thematicArea: "economic-development",
-    linkageScores: { sdgScore: 5, isoScore: 2, sciScore: 3, linkageType: "discussion" },
-    projectPhase: generateProjectPhase(),
+  "sci2025": {
+    "direct": "No",
+    "indirect": "Transparency and Accountability"
   },
-  {
-    id: "470",
-    department: "सहरी योजना आयोग",
-    sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
-    subSector: "शासन प्रणाली",
-    mainProgram: "शासन प्रणाली",
-    programName: "प्रत्येक मार्टमा स्थानीय उत्पादनहरूका लागि २०% ठाउँ सुनिस्चितता कार्यक्रम",
-    budget: 200,
-    budgetCode: "22522",
-    ward: "केन्द्र",
-    category: "मुख्य",
-    sdg: { direct: "8(8.3.1) / 12.3.1", indirect: "No" },
-    iso37120: { direct: "No", indirect: "Governance, Economy" },
-    sci2025: {
-      direct: "Pillar No.4(Smart Economy)/ Component No.4.3(Productivity and Job Creation)/ Indicator: I-082",
-      indirect: "Economy Welfare",
-    },
-    thematicArea: "economic-development",
-    linkageScores: { sdgScore: 5, isoScore: 2, sciScore: 5, linkageType: "concurrence" },
-    projectPhase: generateProjectPhase(),
+  "thematicArea": "urban-finance",
+  "linkageScores": {
+    "sdgScore": 2,
+    "isoScore": 2,
+    "sciScore": 2,
+    "linkageType": "declaration"
   },
-  {
-    id: "471",
-    department: "सहरी योजना आयोग",
-    sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
-    subSector: "शासन प्रणाली",
-    mainProgram: "शासन प्रणाली",
-    programName: "मेट्रोपोलिटन research fellowship (MRF) कार्यक्रम २ वर्षको प्रतिवेदन छपाइ",
-    budget: 300,
-    budgetCode: "22522",
-    ward: "केन्द्र",
-    category: "मुख्य",
-    sdg: { direct: "No", indirect: "Peace, Justice and Strong Institutions / Partnerships for the goals" },
-    iso37120: { direct: "No", indirect: "Governance, Economy" },
-    sci2025: {
-      direct: "Pillar No. 2(Smart Governance)/ Component No.2.1(E-Service)/ Indicator: I-014",
-      indirect: "Education and Literacy, Innovation and Entrepreneurship",
-    },
-    thematicArea: "research-fellowship",
-    linkageScores: { sdgScore: 2, isoScore: 2, sciScore: 4, linkageType: "research" },
-    projectPhase: generateProjectPhase(),
+  "projectPhase": generateProjectPhase()
+},
+{
+  "id": "4",
+  "department": "सहरी योजना आयोग",
+  "sector": "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
+  "subSector": "शासन प्रणाली",
+  "mainProgram": "शासन प्रणाली",
+  "programName": "योजना तथा कार्यक्रम छनौट कार्यको लागि SDG Localisation Manual निर्माण",
+  "budget": 500,
+  "budgetCode": "22411",
+  "ward": "केन्द्र",
+  "category": "मुख्य",
+  "sdg": {
+    "direct": "No",
+    "indirect": "Peace, Justice and Strong Institutions / Partnerships for the goals"
   },
-  {
-    id: "472",
-    department: "सहरी योजना आयोग",
-    sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
-    subSector: "शासन प्रणाली",
-    mainProgram: "शासन प्रणाली",
-    programName: "Monthly Global Nomad Meetups",
-    budget: 300,
-    budgetCode: "22522",
-    ward: "केन्द्र",
-    category: "मुख्य",
-    sdg: { direct: "Sustainable cities and communities", indirect: "Partnerships for the Goals / Quality Education" },
-    iso37120: { direct: "No", indirect: "Governance, Economy, Recreation" },
-    sci2025: {
-      direct: "Pillar No. 4(Social Economy)/ Component No.4.2(Innovation and Entrepreneurship)/ Indicator: I-076",
-      indirect: "Economy Welfare, E-Services",
-    },
-    thematicArea: "economic-development",
-    linkageScores: { sdgScore: 4, isoScore: 2, sciScore: 4, linkageType: "discussion" },
-    projectPhase: generateProjectPhase(),
+  "iso37120": {
+    "direct": "No",
+    "indirect": "Governance, Economy, Finance"
   },
-  {
-    id: "473",
-    department: "सहरी योजना आयोग",
-    sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
-    subSector: "योजना तर्जुमा र कार्यान्वयन",
-    mainProgram: "योजना तर्जुमा र कार्यान्वयन",
-    programName: "योजना तर्जुमा लगायत अन्तरक्रिया तथा गोष्ठी",
-    budget: 500,
-    budgetCode: "22522",
-    ward: "केन्द्र",
-    category: "मुख्य",
-    sdg: { direct: "No", indirect: "Peace, Justice and Strong Institutions / Partnerships for the goals" },
-    iso37120: { direct: "No", indirect: "Governance, Economy" },
-    sci2025: {
-      direct: "Pillar No.2(Smart Governance)/ Component No.2.3(Transparency and Accountability)/ Indicator: I-020, 021",
-      indirect: "Economy Welfare, E-Services",
-    },
-    thematicArea: "planning-implementation",
-    linkageScores: { sdgScore: 2, isoScore: 2, sciScore: 4, linkageType: "discussion" },
-    projectPhase: generateProjectPhase(),
+  "sci2025": {
+    "direct": "No",
+    "indirect": "E-Services / Literacy Rate"
   },
-  {
-    id: "474",
-    department: "सहरी योजना आयोग",
-    sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
-    subSector: "शासन प्रणाली",
-    mainProgram: "शासन प्रणाली",
-    programName: "निति सम्बन्धी कार्यक्रम",
-    budget: 500,
-    budgetCode: "22522",
-    ward: "केन्द्र",
-    category: "मुख्य",
-    sdg: { direct: "No", indirect: "Peace, Justice and Strong Institutions / Partnerships for the goals" },
-    iso37120: { direct: "No", indirect: "Governance, Economy" },
-    sci2025: {
-      direct: "Pillar No.2(Smart Governance)/ Component No.2.3(Transparency and Accountability)/ Indicator: I-020, 021",
-      indirect: "No",
-    },
-    thematicArea: "governance-systems",
-    linkageScores: { sdgScore: 2, isoScore: 2, sciScore: 4, linkageType: "concurrence" },
-    projectPhase: generateProjectPhase(),
+  "thematicArea": "planning-implementation",
+  "linkageScores": {
+    "sdgScore": 3,
+    "isoScore": 2,
+    "sciScore": 3,
+    "linkageType": "discussion"
   },
-  {
-    id: "475",
-    department: "सहरी योजना आयोग",
-    sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
-    subSector: "शासन प्रणाली",
-    mainProgram: "शासन प्रणाली",
-    programName: '"Live, Work & Explore Kathmandu" अभियान',
-    budget: 500,
-    budgetCode: "22522",
-    ward: "केन्द्र",
-    category: "मुख्य",
-    sdg: { direct: "11 (11.3.1)", indirect: "Decent work and economic growth, Partnerships for the goals" },
-    iso37120: { direct: "No", indirect: "Governance, Economy, Recreation" },
-    sci2025: {
-      direct: "Pillar No. 4(Smart Economy)/ Component No.4.2(Innovation and Entrepreneurship) / Indicator: I-076, 077",
-      indirect: "Economy Welfare",
-    },
-    thematicArea: "economic-development",
-    linkageScores: { sdgScore: 5, isoScore: 2, sciScore: 5, linkageType: "research" },
-    projectPhase: generateProjectPhase(),
+  "projectPhase": generateProjectPhase()
+},
+{
+  "id": "5",
+  "department": "सहरी योजना आयोग",
+  "sector": "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
+  "subSector": "शासन प्रणाली",
+  "mainProgram": "शासन प्रणाली",
+  "programName": "Cosmopolitan City सम्भाव्यता तथा मापदण्ड अध्ययन",
+  "budget": 500,
+  "budgetCode": "22411",
+  "ward": "केन्द्र",
+  "category": "मुख्य",
+  "sdg": {
+    "direct": "11.3.1",
+    "indirect": "Peace, Justice and Strong Institutions / Partnerships for the goals"
   },
-  {
-    id: "476",
-    department: "सहरी योजना आयोग",
-    sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
-    subSector: "शासन प्रणाली",
-    mainProgram: "शासन प्रणाली",
-    programName: '"काठमाडौँ संवाद" मासिक कार्यक्रम सञ्चालन',
-    budget: 600,
-    budgetCode: "22522",
-    ward: "केन्द्र",
-    category: "मुख्य",
-    sdg: { direct: "No", indirect: "Decent work and economic growth, Partnerships for the goals" },
-    iso37120: { direct: "No", indirect: "Governance, Economy, Finance" },
-    sci2025: { direct: "Pillar No. 1/ Component No.1.2 / Indicator: I-012, Non-communicable disease", indirect: "" },
-    thematicArea: "governance-systems",
-    linkageScores: { sdgScore: 2, isoScore: 2, sciScore: 3, linkageType: "discussion" },
-    projectPhase: generateProjectPhase(),
+  "iso37120": {
+    "direct": "No",
+    "indirect": "Governance, Economy, Recreation"
   },
-  {
-    id: "477",
-    department: "सहरी योजना आयोग",
-    sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
-    subSector: "शासन प्रणाली",
-    mainProgram: "शासन प्रणाली",
-    programName: '"स्वास्थ्य संवाद" मासिक कार्यक्रम',
-    budget: 600,
-    budgetCode: "22522",
-    ward: "केन्द्र",
-    category: "मुख्य",
-    sdg: { direct: "3.8.1 – Coverage of essential health services", indirect: "No" },
-    iso37120: { direct: "No", indirect: "Health, Governance" },
-    sci2025: { direct: "No", indirect: "Health and Wellbeing, Health Infrastructure" },
-    thematicArea: "governance-systems",
-    linkageScores: { sdgScore: 5, isoScore: 2, sciScore: 3, linkageType: "discussion" },
-    projectPhase: generateProjectPhase(),
+  "sci2025": {
+    "direct": "No",
+    "indirect": "Economy Welfare / Innovation and Entrepreneurship"
   },
-  {
-    id: "478",
-    department: "सहरी योजना आयोग",
-    sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
-    subSector: "शासन प्रणाली",
-    mainProgram: "शासन प्रणाली",
-    programName: "युवालाई स्थानीय योजना निर्माणमा प्रत्यक्ष संलग्न गराउने फेलोशिप कार्यक्रम सञ्चालन",
-    budget: 1000,
-    budgetCode: "22522",
-    ward: "केन्द्र",
-    category: "मुख्य",
-    sdg: { direct: "16 (16.7.2)", indirect: "Quality Education" },
-    iso37120: { direct: "No", indirect: "Governance, Economy, Finance" },
-    sci2025: {
-      direct: "Pillar No.2(Smart Governance)/ Component No.2.3(Transparency and Accountability)/ Indicator: I-020, 021",
-      indirect: "Innovation and Entrepreneurship",
-    },
-    thematicArea: "research-fellowship",
-    linkageScores: { sdgScore: 5, isoScore: 2, sciScore: 5, linkageType: "research" },
-    projectPhase: generateProjectPhase(),
+  "thematicArea": "planning-implementation",
+  "linkageScores": {
+    "sdgScore": 5,
+    "isoScore": 2,
+    "sciScore": 3,
+    "linkageType": "research"
   },
-  {
-    id: "479",
-    department: "सहरी योजना आयोग",
-    sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
-    subSector: "शासन प्रणाली",
-    mainProgram: "शासन प्रणाली",
-    programName: "Kathmandu Global Volunteer Network कार्यक्रम",
-    budget: 1000,
-    budgetCode: "22522",
-    ward: "केन्द्र",
-    category: "मुख्य",
-    sdg: { direct: "11 (11.3.1) / 17.16.1", indirect: "Quality Education" },
-    iso37120: { direct: "No", indirect: "Governance" },
-    sci2025: {
-      direct: "Pillar No.2(Smart Governance)/ Component No.2.3(Transparency and Accountability)/ Indicator: I-020, 021",
-      indirect: "Productivity and Job Creation",
-    },
-    thematicArea: "governance-systems",
-    linkageScores: { sdgScore: 5, isoScore: 2, sciScore: 5, linkageType: "concurrence" },
-    projectPhase: generateProjectPhase(),
+  "projectPhase": generateProjectPhase()
+},
+{
+  "id": "6",
+  "department": "सहरी योजना आयोग",
+  "sector": "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
+  "subSector": "शासन प्रणाली",
+  "mainProgram": "शासन प्रणाली",
+  "programName": "उच्च जोखिम क्षेत्र नक्साङ्कन, पूर्व तयारीको लागि डिजिटल डेटा तयारि",
+  "budget": 2000,
+  "budgetCode": "22411",
+  "ward": "केन्द्र",
+  "category": "मुख्य",
+  "sdg": {
+    "direct": "11(11.5.1 / 11.3.1)",
+    "indirect": "No"
   },
-  {
-    id: "480",
-    department: "सहरी योजना आयोग",
-    sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
-    subSector: "शासन प्रणाली",
-    mainProgram: "शासन प्रणाली",
-    programName: "नेवा छे:को प्रवर्द्धनका निम्ती इन्जिनियरिङ र आर्किटेक्चर पढाइ हुने कलेजहरुमा २ दिने अभिमुखीकरण कार्यक्रम",
-    budget: 1000,
-    budgetCode: "22522",
-    ward: "केन्द्र",
-    category: "मुख्य",
-    sdg: { direct: "4 (4.7.1) / 11.4.1", indirect: "No" },
-    iso37120: { direct: "No", indirect: "Governance, Education, Recreation, Urban planning" },
-    sci2025: {
-      direct: "Pillar No. 1(Smart People)/ Component No.1.2(Education and Literacy) / Indicator: I-005, 006, 007",
-      indirect: "E-Services",
-    },
-    thematicArea: "research-fellowship",
-    linkageScores: { sdgScore: 5, isoScore: 2, sciScore: 5, linkageType: "research" },
-    projectPhase: generateProjectPhase(),
+  "iso37120": {
+    "direct": "No",
+    "indirect": "Governance, Safety, Urban planning"
   },
-  {
-    id: "481",
-    department: "सहरी योजना आयोग",
-    sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
-    subSector: "शासन प्रणाली",
-    mainProgram: "शासन प्रणाली",
-    programName: "मनोसामाजिक हेल्पलाइन २४x७ मनोसामाजिक परामर्शकर्ता कक्ष संचालन समेत",
-    budget: 1500,
-    budgetCode: "22522",
-    ward: "केन्द्र",
-    category: "मुख्य",
-    sdg: { direct: "3 (3.4.2)", indirect: "No" },
-    iso37120: { direct: "No", indirect: "Health, Safety, Governance" },
-    sci2025: {
-      direct: "Pillar No. 1(Smart People)/ Component No.1.2(Health and Wellbeing)/ Indicator: I-002, 003",
-      indirect: "Gender Empowerment",
-    },
-    thematicArea: "governance-systems",
-    linkageScores: { sdgScore: 5, isoScore: 2, sciScore: 5, linkageType: "research" },
-    projectPhase: generateProjectPhase(),
+  "sci2025": {
+    "direct": "Pillar No. 2(Smart Governance)/ Component No.2.7(Disaster Resiliency)/ Indicator: I-031, 032, 033",
+    "indirect": "Spatial Planning and Development Regulation"
   },
-  {
-    id: "482",
-    department: "सहरी योजना आयोग",
-    sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
-    subSector: "शासन प्रणाली",
-    mainProgram: "शासन प्रणाली",
-    programName: "मेट्रोपोलिटन research fellowship (MRF) कार्यक्रम",
-    budget: 2500,
-    budgetCode: "22522",
-    ward: "केन्द्र",
-    category: "मुख्य",
-    sdg: { direct: "No", indirect: "Industry, Innovation and Infrastructure / Partnerships for the goals" },
-    iso37120: { direct: "No", indirect: "Governance, Economy, Urban planning" },
-    sci2025: { direct: "No", indirect: "Education and Literacy" },
-    thematicArea: "research-fellowship",
-    linkageScores: { sdgScore: 2, isoScore: 2, sciScore: 3, linkageType: "research" },
-    projectPhase: generateProjectPhase(),
+  "thematicArea": "disaster-resilience",
+  "linkageScores": {
+    "sdgScore": 5,
+    "isoScore": 3,
+    "sciScore": 5,
+    "linkageType": "research"
   },
-  {
-    id: "483",
-    department: "सहरी योजना आयोग",
-    sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
-    subSector: "शासन प्रणाली",
-    mainProgram: "शासन प्रणाली",
-    programName: "सूचना प्रविधि सम्मेलन",
-    budget: 2500,
-    budgetCode: "22522",
-    ward: "केन्द्र",
-    category: "मुख्य",
-    sdg: { direct: "No", indirect: "Industry, Innovation and Infrastructure / Partnerships for the goals" },
-    iso37120: { direct: "No", indirect: "Governance, Economy, Telecommunication and Innovation" },
-    sci2025: {
-      direct:
-        "Pillar No. 1(Smart People)/ Component No.1.3(Digital Inclusion) / Indicator: I-008 And ICT Infrastructure I-049",
-      indirect: "Education and Literacy, Economy Welfare",
-    },
-    thematicArea: "digital-innovation",
-    linkageScores: { sdgScore: 3, isoScore: 3, sciScore: 5, linkageType: "research" },
-    projectPhase: generateProjectPhase(),
+  "projectPhase": generateProjectPhase()
+},
+{
+  "id": "7",
+  "department": "सहरी योजना आयोग",
+  "sector": "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
+  "subSector": "शासन प्रणाली",
+  "mainProgram": "शासन प्रणाली",
+  "programName": "सहरी योजना आयोगको पदाधिकारी, सहायक विज्ञ तथा कर्मचारीहरुको थप सुबिधा",
+  "budget": 10000,
+  "budgetCode": "22411",
+  "ward": "केन्द्र",
+  "category": "मुख्य",
+  "sdg": {
+    "direct": "No",
+    "indirect": "Peace, Justice and Strong Institutions / Partnerships for the goals"
   },
-  {
-    id: "484",
-    department: "सहरी योजना आयोग",
-    sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
-    subSector: "शासन प्रणाली",
-    mainProgram: "शासन प्रणाली",
-    programName: "क्यारियर क्याम्प कार्यक्रम",
-    budget: 5000,
-    budgetCode: "22522",
-    ward: "केन्द्र",
-    category: "मुख्य",
-    sdg: { direct: "4 (4.7.1)", indirect: "No" },
-    iso37120: { direct: "No", indirect: "Governance, Economy, Urban planning" },
-    sci2025: {
-      direct:
-        "Pillar No. 1(Smart People)/ Component No.1.3(Digital Inclusion) / Indicator: I-008 And ICT Infrastructure I-049",
-      indirect: "Education and Literacy, Economy Welfare",
-    },
-    thematicArea: "research-fellowship",
-    linkageScores: { sdgScore: 5, isoScore: 2, sciScore: 5, linkageType: "research" },
-    projectPhase: generateProjectPhase(),
+  "iso37120": {
+    "direct": "No",
+    "indirect": "Governance, Economy, Finance"
   },
-  {
-    id: "485",
-    department: "सहरी योजना आयोग",
-    sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
-    subSector: "शासन प्रणाली",
-    mainProgram: "शासन प्रणाली",
-    programName: "KMII दोश्रो संस्करण - सातै प्रदेश बाट talent hunt बीउ पूंजी समेत",
-    budget: 5000,
-    budgetCode: "22522",
-    ward: "केन्द्र",
-    category: "मुख्य",
-    sdg: { direct: "8 (8.3.1)", indirect: "No" },
-    iso37120: { direct: "No", indirect: "Governance, Economy" },
-    sci2025: { direct: "No", indirect: "Economy Welfare, Productivity and Job Creation" },
-    thematicArea: "economic-development",
-    linkageScores: { sdgScore: 5, isoScore: 2, sciScore: 3, linkageType: "concurrence" },
-    projectPhase: generateProjectPhase(),
+  "sci2025": {
+    "direct": "No",
+    "indirect": "Transparency and Accountability"
   },
-  {
-    id: "486",
-    department: "सहरी योजना आयोग",
-    sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
-    subSector: "शासन प्रणाली",
-    mainProgram: "शासन प्रणाली",
-    programName: "स्थलगत नाप जाँच, सर्वे तथा अनुगमन खर्च",
-    budget: 500,
-    budgetCode: "22611",
-    ward: "केन्द्र",
-    category: "मुख्य",
-    sdg: { direct: "No", indirect: "Peace, Justice and Strong Institutions / Industry, Innovation and Infrastructure" },
-    iso37120: { direct: "Water and Sanitation, Transport, Environment", indirect: "No" },
-    sci2025: {
-      direct: "Pillar No. 2(Smart Governance)/ Component No.2.5/ Indicator: I-025, 026, 027",
-      indirect: "Urban land use / Built Environment",
-    },
-    thematicArea: "planning-implementation",
-    linkageScores: { sdgScore: 2, isoScore: 4, sciScore: 5, linkageType: "concurrence" },
-    projectPhase: generateProjectPhase(),
+  "thematicArea": "governance-systems",
+  "linkageScores": {
+    "sdgScore": 2,
+    "isoScore": 2,
+    "sciScore": 2,
+    "linkageType": "declaration"
   },
-  {
-    id: "487",
-    department: "सहरी योजना आयोग",
-    sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
-    subSector: "शासन प्रणाली",
-    mainProgram: "शासन प्रणाली",
-    programName: "One-Door Construction Approval System संचालन",
-    budget: 50,
-    budgetCode: "22711",
-    ward: "केन्द्र",
-    category: "मुख्य",
-    sdg: { direct: "16 (16.6.2)", indirect: "No" },
-    iso37120: { direct: "Water and Sanitation, Transport, Environment", indirect: "Governance and Economy" },
-    sci2025: {
-      direct: "Pillar No. 2(Smart Governance)/ Component No.2.1(E-Services)/ Indicator: I-014",
-      indirect: "Spatial Planning and Development Regulation",
-    },
-    thematicArea: "digital-innovation",
-    linkageScores: { sdgScore: 5, isoScore: 4, sciScore: 5, linkageType: "research" },
-    projectPhase: generateProjectPhase(),
+  "projectPhase": generateProjectPhase()
+},
+{
+  "id": "8",
+  "department": "सहरी योजना आयोग",
+  "sector": "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
+  "subSector": "शासन प्रणाली",
+  "mainProgram": "शासन प्रणाली",
+  "programName": "सहरी योजना आयोगको पदाधिकारी तथा सहायक विज्ञहरूको पारिश्रमिक",
+  "budget": 15000,
+  "budgetCode": "22411",
+  "ward": "केन्द्र",
+  "category": "मुख्य",
+  "sdg": {
+    "direct": "No",
+    "indirect": "Peace, Justice and Strong Institutions / Partnerships for the goals"
   },
-  {
-    id: "488",
-    department: "सहरी योजना आयोग",
-    sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
-    subSector: "शासन प्रणाली",
-    mainProgram: "शासन प्रणाली",
-    programName: "बैठक सञ्चालन, अतिथि सत्कार र कार्यसञ्चालन लगायत बैठक भत्ता र खाजा खर्च",
-    budget: 1000,
-    budgetCode: "22711",
-    ward: "केन्द्र",
-    category: "मुख्य",
-    sdg: { direct: "No", indirect: "Peace, Justice and Strong Institutions / Partnerships for the goals" },
-    iso37120: { direct: "No", indirect: "Governance, Economy, Finance" },
-    sci2025: {
-      direct: "Pillar No. 2(Smart Governance)/ Component No.2.3 / Indicator: I-020, 021",
-      indirect: "Inclusivity, Urban Finance",
-    },
-    thematicArea: "governance-systems",
-    linkageScores: { sdgScore: 2, isoScore: 2, sciScore: 4, linkageType: "declaration" },
-    projectPhase: generateProjectPhase(),
+  "iso37120": {
+    "direct": "No",
+    "indirect": "Governance, Economy, Finance"
   },
-  {
-    id: "489",
-    department: "सहरी योजना आयोग",
-    sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
-    subSector: "शासन प्रणाली",
-    mainProgram: "शासन प्रणाली",
-    programName: "आकस्मिक तथा भैपरी आउने कार्य",
-    budget: 1000,
-    budgetCode: "22711",
-    ward: "केन्द्र",
-    category: "मुख्य",
-    sdg: { direct: "No", indirect: "Peace, Justice and Strong Institutions / Partnerships for the goals" },
-    iso37120: { direct: "No", indirect: "Governance, Economy, Finance" },
-    sci2025: {
-      direct: "Pillar No. 2(Smart Governance)/ Component No.2.7 / Indicator: I-031, 032, 033",
-      indirect: "Urban land use / Built Environment",
-    },
-    thematicArea: "disaster-resilience",
-    linkageScores: { sdgScore: 2, isoScore: 2, sciScore: 4, linkageType: "declaration" },
-    projectPhase: generateProjectPhase(),
+  "sci2025": {
+    "direct": "No",
+    "indirect": "Transparency and Accountability"
   },
-  {
-    id: "490",
-    department: "सहरी योजना आयोग",
-    sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
-    subSector: "शासन प्रणाली",
-    mainProgram: "शासन प्रणाली",
-    programName: "AI Consortium team सञ्चालन खर्च",
-    budget: 2000,
-    budgetCode: "22711",
-    ward: "केन्द्र",
-    category: "मुख्य",
-    sdg: { direct: "No", indirect: "Industry, Innovation and Infrastructure / Partnerships for the Goals" },
-    iso37120: { direct: "No", indirect: "Governance, Economy, Telecommunication and Innovation" },
-    sci2025: {
-      direct: "Pillar No. 1(Smart Governance)/ Component No.1.3 / Indicator: I-008 And 3.5 I-049",
-      indirect: "Education and Literacy, Economy Welfare",
-    },
-    thematicArea: "digital-innovation",
-    linkageScores: { sdgScore: 3, isoScore: 3, sciScore: 5, linkageType: "research" },
-    projectPhase: generateProjectPhase(),
+  "thematicArea": "governance-systems",
+  "linkageScores": {
+    "sdgScore": 2,
+    "isoScore": 2,
+    "sciScore": 2,
+    "linkageType": "declaration"
   },
-  {
-    id: "491",
-    department: "सहरी योजना आयोग",
-    sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
-    subSector: "शासन प्रणाली",
-    mainProgram: "शासन प्रणाली",
-    programName: "स्थानीय सतर्कता इकाई संचालन खर्च",
-    budget: 5000,
-    budgetCode: "22711",
-    ward: "केन्द्र",
-    category: "मुख्य",
-    sdg: { direct: "11 (11.5.1)", indirect: "No" },
-    iso37120: { direct: "No", indirect: "Governance, Safety" },
-    sci2025: {
-      direct: "Pillar No. 2(Smart Governance)/ Component No.2.7 / Indicator: I-031, 032, 033",
-      indirect: "Urban land use / Built Environment",
-    },
-    thematicArea: "disaster-resilience",
-    linkageScores: { sdgScore: 5, isoScore: 2, sciScore: 5, linkageType: "research" },
-    projectPhase: generateProjectPhase(),
+  "projectPhase": generateProjectPhase()
+},
+{
+  "id": "9",
+  "department": "सहरी योजना आयोग",
+  "sector": "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
+  "subSector": "शासन प्रणाली",
+  "mainProgram": "शासन प्रणाली",
+  "programName": "श्रम बैंकमार्फत जनशक्ति परिचालन",
+  "budget": 20000,
+  "budgetCode": "22411",
+  "ward": "केन्द्र",
+  "category": "मुख्य",
+  "sdg": {
+    "direct": "8(8.3.1) / 17.16.1",
+    "indirect": "No"
   },
-  {
-    id: "492",
-    department: "सहरी योजना आयोग",
-    sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
-    subSector: "शासन प्रणाली",
-    mainProgram: "शासन प्रणाली",
-    programName: "TS र Level मशीन लगायतका उपकरण तथा अन्य सामग्री खरिद",
-    budget: 1000,
-    budgetCode: "31122",
-    ward: "केन्द्र",
-    category: "मुख्य",
-    sdg: { direct: "No", indirect: "Industry, Innovation and Infrastructure / Peace, Justice and Strong Institutions" },
-    iso37120: { direct: "No", indirect: "Economy and Urban Planning" },
-    sci2025: { direct: "No", indirect: "Urban land use / Built Environment" },
-    thematicArea: "planning-implementation",
-    linkageScores: { sdgScore: 2, isoScore: 2, sciScore: 2, linkageType: "declaration" },
-    projectPhase: generateProjectPhase(),
+  "iso37120": {
+    "direct": "No",
+    "indirect": "Governance, Economy, Finance"
   },
-  {
-    id: "493",
-    department: "सहरी योजना आयोग",
-    sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
-    subSector: "शासन प्रणाली",
-    mainProgram: "शासन प्रणाली",
-    programName: "सरकारी क्याम्पसको सहकार्यमा विपद व्यवस्थापन अध्ययन केन्द्र स्थापना र संचालन",
-    budget: 2000,
-    budgetCode: "31122",
-    ward: "केन्द्र",
-    category: "मुख्य",
-    sdg: { direct: "11 (11.5.1)", indirect: "No" },
-    iso37120: { direct: "No", indirect: "Safety, Education, Governance" },
-    sci2025: {
-      direct: "Pillar No.2(Smart Governance)/ Component No.2.7(Disaster Resiliency) / Indicator: I-031, 032",
-      indirect: "No",
-    },
-    thematicArea: "disaster-resilience",
-    linkageScores: { sdgScore: 5, isoScore: 2, sciScore: 5, linkageType: "research" },
-    projectPhase: generateProjectPhase(),
+  "sci2025": {
+    "direct": "Pillar No.4(Smart Economy)/ Component No.4.3(Productivity and Job Creation) / Indicator: I-082, 081",
+    "indirect": "Economic Welfare"
   },
-  {
-    id: "494",
-    department: "सहरी योजना आयोग",
-    sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
-    subSector: "शासन प्रणाली",
-    mainProgram: "शासन प्रणाली",
-    programName: "सहरी योजना आयोग कार्यालय मर्मत सम्भार",
-    budget: 500,
-    budgetCode: "22291",
-    ward: "केन्द्र",
-    category: "मुख्य",
-    sdg: { direct: "No", indirect: "Peace, Justice and Strong Institutions / Industry, Innovation and Infrastructure" },
-    iso37120: { direct: "No", indirect: "Governance, Economy, Finance" },
-    sci2025: { direct: "Pillar No. 1/ Component No.1.2 / Indicator: I-012, Non-communicable disease", indirect: "" },
-    thematicArea: "governance-systems",
-    linkageScores: { sdgScore: 2, isoScore: 2, sciScore: 3, linkageType: "declaration" },
-    projectPhase: generateProjectPhase(),
+  "thematicArea": "economic-development",
+  "linkageScores": {
+    "sdgScore": 5,
+    "isoScore": 2,
+    "sciScore": 5,
+    "linkageType": "concurrence"
   },
-  {
-    id: "495",
-    department: "सहरी योजना आयोग",
-    sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
-    subSector: "शासन प्रणाली",
-    mainProgram: "शासन प्रणाली",
-    programName: "कल सेन्टर संचालन तथा गुनासो सुनुवाई संयन्त्र निर्माण",
-    budget: 2000,
-    budgetCode: "31134",
-    ward: "केन्द्र",
-    category: "मुख्य",
-    sdg: { direct: "16 (16.6.2)", indirect: "No" },
-    iso37120: { direct: "Governance", indirect: "Economy and Urban Planning" },
-    sci2025: {
-      direct: "Pillar No.2(Smart Governance)/ Component No.2.1(E-Services)/ Indicator: I-015",
-      indirect: "Municipal e-service defined by Citizen Charter",
-    },
-    thematicArea: "digital-innovation",
-    linkageScores: { sdgScore: 5, isoScore: 4, sciScore: 5, linkageType: "research" },
-    projectPhase: generateProjectPhase(),
+  "projectPhase": generateProjectPhase()
+},
+{
+  "id": "10",
+  "department": "सहरी योजना आयोग",
+  "sector": "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
+  "subSector": "शासन प्रणाली",
+  "mainProgram": "शासन प्रणाली",
+  "programName": "बजेट विश्लेषण तथा समीक्षा, सहरी योजना आयोगको त्रैमासिक तथा वार्षिक प्रतिवेदन तयारी तथा छपाई",
+  "budget": 500,
+  "budgetCode": "22512",
+  "ward": "केन्द्र",
+  "category": "मुख्य",
+  "sdg": {
+    "direct": "No",
+    "indirect": "Peace, Justice and Strong Institutions / Partnerships for the goals"
   },
-  {
-    id: "496",
-    department: "सहरी योजना आयोग",
-    sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
-    subSector: "शासन प्रणाली",
-    mainProgram: "शासन प्रणाली",
-    programName: "महत्वपुर्ण दस्ताबेजहरुको डिजिटल अभिलेखीकरण (सफ्टवेयर निर्माण समेत)",
-    budget: 2500,
-    budgetCode: "31134",
-    ward: "केन्द्र",
-    category: "मुख्य",
-    sdg: { direct: "No", indirect: "Peace, Justice and Strong Institutions / Partnerships for the goals" },
-    iso37120: { direct: "No", indirect: "Governance, Economy, Finance" },
-    sci2025: { direct: "No", indirect: "ICT Based Land Information System / Availability of public data online" },
-    thematicArea: "digital-innovation",
-    linkageScores: { sdgScore: 2, isoScore: 2, sciScore: 3, linkageType: "discussion" },
-    projectPhase: generateProjectPhase(),
+  "iso37120": {
+    "direct": "No",
+    "indirect": "Governance, Economy, Finance"
   },
-  {
-    id: "497",
-    department: "सहरी योजना आयोग",
-    sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
-    subSector: "शासन प्रणाली",
-    mainProgram: "शासन प्रणाली",
-    programName: "पूँजीगत परामर्श खर्च",
-    budget: 1000,
-    budgetCode: "31135",
-    ward: "केन्द्र",
-    category: "मुख्य",
-    sdg: { direct: "No", indirect: "Peace, Justice and Strong Institutions / Partnerships for the goals" },
-    iso37120: { direct: "No", indirect: "Governance, Economy, Finance" },
-    sci2025: {
-      direct: "Pillar No. 2(Smart Governance)/ Component No.2.4(Urban Finance) / Indicator: I-022, 023 024",
-      indirect: "Economic Welfare, Urban land use / Built Environment",
-    },
-    thematicArea: "urban-finance",
-    linkageScores: { sdgScore: 2, isoScore: 2, sciScore: 4, linkageType: "concurrence" },
-    projectPhase: generateProjectPhase(),
+  "sci2025": {
+    "direct": "No",
+    "indirect": "Urban Finance"
   },
-  {
-    id: "498",
-    department: "सहरी योजना आयोग",
-    sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
-    subSector: "कानुन तथा न्याय",
-    mainProgram: "कानुन तथा न्याय",
-    programName:
-      "वडास्तरमा कर एवम् स्थानीय कानून सम्बन्धि कानूनी शिविर सञ्चालन र जनचेतनामूलक डिजिटल सामाग्रीहरु निर्माण गर्न नेपाल कानून तथा नीति केन्द्रलाई अनुदान",
-    budget: 3200,
-    budgetCode: "25315",
-    ward: "केन्द्र",
-    category: "मुख्य",
-    sdg: { direct: "16 (16.6.2)", indirect: "No" },
-    iso37120: { direct: "No", indirect: "Governance, Economy, Finance, Education" },
-    sci2025: {
-      direct: "Pillar No. 2(Smart Governance)/ Component No.2.3 / Indicator: I-020, 021",
-      indirect: "Inclusivity, Urban Finance",
-    },
-    thematicArea: "law-justice",
-    linkageScores: { sdgScore: 5, isoScore: 2, sciScore: 5, linkageType: "concurrence" },
-    projectPhase: generateProjectPhase(),
+  "thematicArea": "urban-finance",
+  "linkageScores": {
+    "sdgScore": 2,
+    "isoScore": 2,
+    "sciScore": 2,
+    "linkageType": "declaration"
   },
-  // Swarneem (स्वर्णीम) Category Programs
-  {
-    id: "1199",
-    department: "सहरी योजना आयोग",
-    sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
-    subSector: "शासन प्रणाली",
-    mainProgram: "शासन प्रणाली",
-    programName: "कार्ययोजना बमोजिम टेक्नोलोजि Research and Innovation Lab स्थापना तथा सञ्चालन",
-    budget: 10000,
-    budgetCode: "31132",
-    ward: "केन्द्र",
-    category: "स्वर्णीम",
-    sdg: { direct: "No", indirect: "Industry, Innovation and Infrastructure" },
-    iso37120: { direct: "No", indirect: "Governance, Economy, Telecommunication and Innovation" },
-    sci2025: { direct: "No", indirect: "Innovation and Entrepreneurship, ICT Infrastructure and Innovation" },
-    thematicArea: "digital-innovation",
-    linkageScores: { sdgScore: 3, isoScore: 3, sciScore: 4, linkageType: "research" },
-    projectPhase: generateProjectPhase(),
+  "projectPhase": generateProjectPhase()
+},
+{
+  "id": "11",
+  "department": "सहरी योजना आयोग",
+  "sector": "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
+  "subSector": "शासन प्रणाली",
+  "mainProgram": "शासन प्रणाली",
+  "programName": "स्थानीय व्यञ्जन, पेय पदार्थ, तेल लगायतका उत्पादन तथा कुकुर तिहार र म्ह पूजाको अन्तरराष्ट्रिय ब्रान्डिङ सम्बन्धि कार्यक्रम",
+  "budget": 200,
+  "budgetCode": "22522",
+  "ward": "केन्द्र",
+  "category": "मुख्य",
+  "sdg": {
+    "direct": "8(8.3.1) / 12.3.1",
+    "indirect": "No"
   },
-  {
-    id: "1200",
-    department: "सहरी योजना आयोग",
-    sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
-    subSector: "शासन प्रणाली",
-    mainProgram: "शासन प्रणाली",
-    programName: "कार्ययोजना बमोजिम प्रशासनीक सुधार अनुसन्धानको लागि संरचनागत व्यवस्था",
-    budget: 2500,
-    budgetCode: "31132",
-    ward: "केन्द्र",
-    category: "स्वर्णीम",
-    sdg: { direct: "No", indirect: "Peace, Justice and Strong Institutions / Partnerships for the goals" },
-    iso37120: { direct: "No", indirect: "Governance, Economy, Finance" },
-    sci2025: {
-      direct: "Pillar No. 2/ Component No.2.1 / Indicator: I-014, And 2.3 I-020, 021",
-      indirect: "Economic Welfare, Urban Finance",
-    },
-    thematicArea: "governance-systems",
-    linkageScores: { sdgScore: 2, isoScore: 2, sciScore: 4, linkageType: "research" },
-    projectPhase: generateProjectPhase(),
+  "iso37120": {
+    "direct": "No",
+    "indirect": "Governance, Economy, Recreation"
   },
-  {
-    id: "1201",
-    department: "सहरी योजना आयोग",
-    sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
-    subSector: "शासन प्रणाली",
-    mainProgram: "शासन प्रणाली",
-    programName: "कार्ययोजना बमोजिम उद्यमशीलता र व्यवसाय इन्क्युवेसन का लगि विभिन्न संघ संस्थाहरु संग को सहकार्य",
-    budget: 10000,
-    budgetCode: "31132",
-    ward: "केन्द्र",
-    category: "स्वर्णीम",
-    sdg: { direct: "8 (8.3.1)", indirect: "No" },
-    iso37120: { direct: "No", indirect: "Governance, Economy, Urban planning" },
-    sci2025: {
-      direct: "Pillar No. 4(Smart Economy)/ Component No.4.2(Innovation and Entrepreneurship) / Indicator: I-076, 077",
-      indirect: "Productivity and Job Creation",
-    },
-    thematicArea: "economic-development",
-    linkageScores: { sdgScore: 5, isoScore: 2, sciScore: 5, linkageType: "research" },
-    projectPhase: generateProjectPhase(),
+  "sci2025": {
+    "direct": "No",
+    "indirect": "Economy Welfare, Innovation and Entrepreneurship"
   },
-  {
-    id: "1202",
-    department: "सहरी योजना आयोग",
-    sector: "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
-    subSector: "शासन प्रणाली",
-    mainProgram: "शासन प्रणाली",
-    programName: "कार्ययोजना बमोजिम जियो स्पासियल प्लानिङ, स्पेस तथा सेटलाईट प्रविधिको अनुशन्धान",
-    budget: 7500,
-    budgetCode: "31132",
-    ward: "केन्द्र",
-    category: "स्वर्णीम",
-    sdg: { direct: "No", indirect: "Sustainable cities and communities, Climate Action, Partnerships for the goals" },
-    iso37120: { direct: "No", indirect: "Urban planning, Governance, Safety, economy" },
-    sci2025: {
-      direct: "Pillar No. 3(Smart Infrastructure)/ Component No.3.7/ Indicator: I-055",
-      indirect: "Disaster Resiliency",
-    },
-    thematicArea: "digital-innovation",
-    linkageScores: { sdgScore: 3, isoScore: 3, sciScore: 4, linkageType: "research" },
-    projectPhase: generateProjectPhase(),
+  "thematicArea": "economic-development",
+  "linkageScores": {
+    "sdgScore": 5,
+    "isoScore": 2,
+    "sciScore": 3,
+    "linkageType": "discussion"
   },
+  "projectPhase": generateProjectPhase()
+},
+{
+  "id": "12",
+  "department": "सहरी योजना आयोग",
+  "sector": "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
+  "subSector": "शासन प्रणाली",
+  "mainProgram": "शासन प्रणाली",
+  "programName": "प्रत्येक मार्टमा स्थानीय उत्पादनहरूका लागि २०% ठाउँ सुनिस्चितता कार्यक्रम",
+  "budget": 200,
+  "budgetCode": "22522",
+  "ward": "केन्द्र",
+  "category": "मुख्य",
+  "sdg": {
+    "direct": "8(8.3.1) / 12.3.1",
+    "indirect": "No"
+  },
+  "iso37120": {
+    "direct": "No",
+    "indirect": "Governance, Economy"
+  },
+  "sci2025": {
+    "direct": "Pillar No.4(Smart Economy)/ Component No.4.3(Productivity and Job Creation)/ Indicator: I-082",
+    "indirect": "Economy Welfare"
+  },
+  "thematicArea": "economic-development",
+  "linkageScores": {
+    "sdgScore": 5,
+    "isoScore": 2,
+    "sciScore": 5,
+    "linkageType": "concurrence"
+  },
+  "projectPhase": generateProjectPhase()
+},
+{
+  "id": "13",
+  "department": "सहरी योजना आयोग",
+  "sector": "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
+  "subSector": "शासन प्रणाली",
+  "mainProgram": "शासन प्रणाली",
+  "programName": "मेट्रोपोलिटन research fellowship (MRF) कार्यक्रम २ वर्षको प्रतिवेदन छपाइ",
+  "budget": 300,
+  "budgetCode": "22522",
+  "ward": "केन्द्र",
+  "category": "मुख्य",
+  "sdg": {
+    "direct": "No",
+    "indirect": "Peace, Justice and Strong Institutions / Partnerships for the goals"
+  },
+  "iso37120": {
+    "direct": "No",
+    "indirect": "Governance, Economy"
+  },
+  "sci2025": {
+    "direct": "Pillar No. 2(Smart Governance)/ Component No.2.1(E-Service)/ Indicator: I-014",
+    "indirect": "Education and Literacy, Innovation and Entrepreneurship"
+  },
+  "thematicArea": "research-fellowship",
+  "linkageScores": {
+    "sdgScore": 2,
+    "isoScore": 2,
+    "sciScore": 4,
+    "linkageType": "research"
+  },
+  "projectPhase": generateProjectPhase()
+},
+{
+  "id": "14",
+  "department": "सहरी योजना आयोग",
+  "sector": "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
+  "subSector": "शासन प्रणाली",
+  "mainProgram": "शासन प्रणाली",
+  "programName": "Monthly Global Nomad Meetups",
+  "budget": 300,
+  "budgetCode": "22522",
+  "ward": "केन्द्र",
+  "category": "मुख्य",
+  "sdg": {
+    "direct": "Sustainable cities and communities",
+    "indirect": "Partnerships for the Goals / Quality Education"
+  },
+  "iso37120": {
+    "direct": "No",
+    "indirect": "Governance, Economy, Recreation"
+  },
+  "sci2025": {
+    "direct": "Pillar No. 4(Social Economy)/ Component No.4.2(Innovation and Entrepreneurship)/ Indicator: I-076",
+    "indirect": "Economy Welfare, E-Services"
+  },
+  "thematicArea": "economic-development",
+  "linkageScores": {
+    "sdgScore": 4,
+    "isoScore": 2,
+    "sciScore": 4,
+    "linkageType": "discussion"
+  },
+  "projectPhase": generateProjectPhase()
+},
+{
+  "id": "15",
+  "department": "सहरी योजना आयोग",
+  "sector": "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
+  "subSector": "योजना तर्जुमा र कार्यान्वयन",
+  "mainProgram": "योजना तर्जुमा र कार्यान्वयन",
+  "programName": "योजना तर्जुमा लगायत अन्तरक्रिया तथा गोष्ठी",
+  "budget": 500,
+  "budgetCode": "22522",
+  "ward": "केन्द्र",
+  "category": "मुख्य",
+  "sdg": {
+    "direct": "No",
+    "indirect": "Peace, Justice and Strong Institutions / Partnerships for the goals"
+  },
+  "iso37120": {
+    "direct": "No",
+    "indirect": "Governance, Economy"
+  },
+  "sci2025": {
+    "direct": "Pillar No.2(Smart Governance)/ Component No.2.3(Transparency and Accountability)/ Indicator: I-020, 021",
+    "indirect": "Economy Welfare, E-Services"
+  },
+  "thematicArea": "planning-implementation",
+  "linkageScores": {
+    "sdgScore": 2,
+    "isoScore": 2,
+    "sciScore": 4,
+    "linkageType": "discussion"
+  },
+  "projectPhase": generateProjectPhase()
+},
+{
+  "id": "16",
+  "department": "सहरी योजना आयोग",
+  "sector": "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
+  "subSector": "शासन प्रणाली",
+  "mainProgram": "शासन प्रणाली",
+  "programName": "निति सम्बन्धी कार्यक्रम",
+  "budget": 500,
+  "budgetCode": "22522",
+  "ward": "केन्द्र",
+  "category": "मुख्य",
+  "sdg": {
+    "direct": "No",
+    "indirect": "Peace, Justice and Strong Institutions / Partnerships for the goals"
+  },
+  "iso37120": {
+    "direct": "No",
+    "indirect": "Governance, Economy"
+  },
+  "sci2025": {
+    "direct": "Pillar No.2(Smart Governance)/ Component No.2.3(Transparency and Accountability)/ Indicator: I-020, 021",
+    "indirect": "No"
+  },
+  "thematicArea": "governance-systems",
+  "linkageScores": {
+    "sdgScore": 2,
+    "isoScore": 2,
+    "sciScore": 4,
+    "linkageType": "concurrence"
+  },
+  "projectPhase": generateProjectPhase()
+},
+{
+  "id": "17",
+  "department": "सहरी योजना आयोग",
+  "sector": "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
+  "subSector": "शासन प्रणाली",
+  "mainProgram": "शासन प्रणाली",
+  "programName": "\"Live, Work & Explore Kathmandu\" अभियान",
+  "budget": 500,
+  "budgetCode": "22522",
+  "ward": "केन्द्र",
+  "category": "मुख्य",
+  "sdg": {
+    "direct": "11 (11.3.1)",
+    "indirect": "Decent work and economic growth, Partnerships for the goals"
+  },
+  "iso37120": {
+    "direct": "No",
+    "indirect": "Governance, Economy, Recreation"
+  },
+  "sci2025": {
+    "direct": "Pillar No. 4(Smart Economy)/ Component No.4.2(Innovation and Entrepreneurship) / Indicator: I-076, 077",
+    "indirect": "Economy Welfare"
+  },
+  "thematicArea": "economic-development",
+  "linkageScores": {
+    "sdgScore": 5,
+    "isoScore": 2,
+    "sciScore": 5,
+    "linkageType": "research"
+  },
+  "projectPhase": generateProjectPhase()
+},
+{
+  "id": "18",
+  "department": "सहरी योजना आयोग",
+  "sector": "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
+  "subSector": "शासन प्रणाली",
+  "mainProgram": "शासन प्रणाली",
+  "programName": "\"काठमाडौँ संवाद\" मासिक कार्यक्रम सञ्चालन",
+  "budget": 600,
+  "budgetCode": "22522",
+  "ward": "केन्द्र",
+  "category": "मुख्य",
+  "sdg": {
+    "direct": "No",
+    "indirect": "Decent work and economic growth, Partnerships for the goals"
+  },
+  "iso37120": {
+    "direct": "No",
+    "indirect": "Governance, Economy, Finance"
+  },
+  "sci2025": {
+    "direct": "Pillar No. 1/ Component No.1.2 / Indicator: I-012, Non-communicable disease",
+    "indirect": ""
+  },
+  "thematicArea": "governance-systems",
+  "linkageScores": {
+    "sdgScore": 2,
+    "isoScore": 2,
+    "sciScore": 3,
+    "linkageType": "discussion"
+  },
+  "projectPhase": generateProjectPhase()
+},
+{
+  "id": "19",
+  "department": "सहरी योजना आयोग",
+  "sector": "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
+  "subSector": "शासन प्रणाली",
+  "mainProgram": "शासन प्रणाली",
+  "programName": "\"स्वास्थ्य संवाद\" मासिक कार्यक्रम",
+  "budget": 600,
+  "budgetCode": "22522",
+  "ward": "केन्द्र",
+  "category": "मुख्य",
+  "sdg": {
+    "direct": "3.8.1 – Coverage of essential health services",
+    "indirect": "No"
+  },
+  "iso37120": {
+    "direct": "No",
+    "indirect": "Health, Governance"
+  },
+  "sci2025": {
+    "direct": "No",
+    "indirect": "Health and Wellbeing, Health Infrastructure"
+  },
+  "thematicArea": "governance-systems",
+  "linkageScores": {
+    "sdgScore": 5,
+    "isoScore": 2,
+    "sciScore": 3,
+    "linkageType": "discussion"
+  },
+  "projectPhase": generateProjectPhase()
+},
+{
+  "id": "20",
+  "department": "सहरी योजना आयोग",
+  "sector": "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
+  "subSector": "शासन प्रणाली",
+  "mainProgram": "शासन प्रणाली",
+  "programName": "युवालाई स्थानीय योजना निर्माणमा प्रत्यक्ष संलग्न गराउने फेलोशिप कार्यक्रम सञ्चालन",
+  "budget": 1000,
+  "budgetCode": "22522",
+  "ward": "केन्द्र",
+  "category": "मुख्य",
+  "sdg": {
+    "direct": "16 (16.7.2)",
+    "indirect": "Quality Education"
+  },
+  "iso37120": {
+    "direct": "No",
+    "indirect": "Governance, Economy, Finance"
+  },
+  "sci2025": {
+    "direct": "Pillar No.2(Smart Governance)/ Component No.2.3(Transparency and Accountability)/ Indicator: I-020, 021",
+    "indirect": "Innovation and Entrepreneurship"
+  },
+  "thematicArea": "research-fellowship",
+  "linkageScores": {
+    "sdgScore": 5,
+    "isoScore": 2,
+    "sciScore": 5,
+    "linkageType": "research"
+  },
+  "projectPhase": generateProjectPhase()
+},
+{
+  "id": "21",
+  "department": "सहरी योजना आयोग",
+  "sector": "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
+  "subSector": "शासन प्रणाली",
+  "mainProgram": "शासन प्रणाली",
+  "programName": "Kathmandu Global Volunteer Network कार्यक्रम",
+  "budget": 1000,
+  "budgetCode": "22522",
+  "ward": "केन्द्र",
+  "category": "मुख्य",
+  "sdg": {
+    "direct": "11 (11.3.1) / 17.16.1",
+    "indirect": "Quality Education"
+  },
+  "iso37120": {
+    "direct": "No",
+    "indirect": "Governance"
+  },
+  "sci2025": {
+    "direct": "Pillar No.2(Smart Governance)/ Component No.2.3(Transparency and Accountability)/ Indicator: I-020, 021",
+    "indirect": "Productivity and Job Creation"
+  },
+  "thematicArea": "governance-systems",
+  "linkageScores": {
+    "sdgScore": 5,
+    "isoScore": 2,
+    "sciScore": 5,
+    "linkageType": "concurrence"
+  },
+  "projectPhase": generateProjectPhase()
+},
+{
+  "id": "22",
+  "department": "सहरी योजना आयोग",
+  "sector": "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
+  "subSector": "शासन प्रणाली",
+  "mainProgram": "शासन प्रणाली",
+  "programName": "नेवा छे:को प्रवर्द्धनका निम्ती इन्जिनियरिङ र आर्किटेक्चर पढाइ हुने कलेजहरुमा २ दिने अभिमुखीकरण कार्यक्रम",
+  "budget": 1000,
+  "budgetCode": "22522",
+  "ward": "केन्द्र",
+  "category": "मुख्य",
+  "sdg": {
+    "direct": "4 (4.7.1) / 11.4.1",
+    "indirect": "No"
+  },
+  "iso37120": {
+    "direct": "No",
+    "indirect": "Governance, Education, Recreation, Urban planning"
+  },
+  "sci2025": {
+    "direct": "Pillar No. 1(Smart People)/ Component No.1.2(Education and Literacy) / Indicator: I-005, 006, 007",
+    "indirect": "E-Services"
+  },
+  "thematicArea": "research-fellowship",
+  "linkageScores": {
+    "sdgScore": 5,
+    "isoScore": 2,
+    "sciScore": 5,
+    "linkageType": "research"
+  },
+  "projectPhase": generateProjectPhase()
+},
+{
+  "id": "23",
+  "department": "सहरी योजना आयोग",
+  "sector": "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
+  "subSector": "शासन प्रणाली",
+  "mainProgram": "शासन प्रणाली",
+  "programName": "मनोसामाजिक हेल्पलाइन २४x७ मनोसामाजिक परामर्शकर्ता कक्ष संचालन समेत",
+  "budget": 1500,
+  "budgetCode": "22522",
+  "ward": "केन्द्र",
+  "category": "मुख्य",
+  "sdg": {
+    "direct": "3 (3.4.2)",
+    "indirect": "No"
+  },
+  "iso37120": {
+    "direct": "No",
+    "indirect": "Health, Safety, Governance"
+  },
+  "sci2025": {
+    "direct": "Pillar No. 1(Smart People)/ Component No.1.2(Health and Wellbeing)/ Indicator: I-002, 003",
+    "indirect": "Gender Empowerment"
+  },
+  "thematicArea": "governance-systems",
+  "linkageScores": {
+    "sdgScore": 5,
+    "isoScore": 2,
+    "sciScore": 5,
+    "linkageType": "research"
+  },
+  "projectPhase": generateProjectPhase()
+},
+{
+  "id": "24",
+  "department": "सहरी योजना आयोग",
+  "sector": "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
+  "subSector": "शासन प्रणाली",
+  "mainProgram": "शासन प्रणाली",
+  "programName": "मेट्रोपोलिटन research fellowship (MRF) कार्यक्रम",
+  "budget": 2500,
+  "budgetCode": "22522",
+  "ward": "केन्द्र",
+  "category": "मुख्य",
+  "sdg": {
+    "direct": "No",
+    "indirect": "Industry, Innovation and Infrastructure / Partnerships for the goals"
+  },
+  "iso37120": {
+    "direct": "No",
+    "indirect": "Governance, Economy, Urban planning"
+  },
+  "sci2025": {
+    "direct": "No",
+    "indirect": "Education and Literacy"
+  },
+  "thematicArea": "research-fellowship",
+  "linkageScores": {
+    "sdgScore": 2,
+    "isoScore": 2,
+    "sciScore": 3,
+    "linkageType": "research"
+  },
+  "projectPhase": generateProjectPhase()
+},
+{
+  "id": "25",
+  "department": "सहरी योजना आयोग",
+  "sector": "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
+  "subSector": "शासन प्रणाली",
+  "mainProgram": "शासन प्रणाली",
+  "programName": "सूचना प्रविधि सम्मेलन",
+  "budget": 2500,
+  "budgetCode": "22522",
+  "ward": "केन्द्र",
+  "category": "मुख्य",
+  "sdg": {
+    "direct": "No",
+    "indirect": "Industry, Innovation and Infrastructure / Partnerships for the goals"
+  },
+  "iso37120": {
+    "direct": "No",
+    "indirect": "Governance, Economy, Telecommunication and Innovation"
+  },
+  "sci2025": {
+    "direct": "Pillar No. 1(Smart People)/ Component No.1.3(Digital Inclusion) / Indicator: I-008 And ICT Infrastructure I-049",
+    "indirect": "Education and Literacy, Economy Welfare"
+  },
+  "thematicArea": "digital-innovation",
+  "linkageScores": {
+    "sdgScore": 3,
+    "isoScore": 3,
+    "sciScore": 5,
+    "linkageType": "research"
+  },
+  "projectPhase": generateProjectPhase()
+},
+{
+  "id": "26",
+  "department": "सहरी योजना आयोग",
+  "sector": "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
+  "subSector": "शासन प्रणाली",
+  "mainProgram": "शासन प्रणाली",
+  "programName": "क्यारियर क्याम्प कार्यक्रम",
+  "budget": 5000,
+  "budgetCode": "22522",
+  "ward": "केन्द्र",
+  "category": "मुख्य",
+  "sdg": {
+    "direct": "4 (4.7.1)",
+    "indirect": "No"
+  },
+  "iso37120": {
+    "direct": "No",
+    "indirect": "Governance, Economy, Urban planning"
+  },
+  "sci2025": {
+    "direct": "Pillar No. 1(Smart People)/ Component No.1.3(Digital Inclusion) / Indicator: I-008 And ICT Infrastructure I-049",
+    "indirect": "Education and Literacy, Economy Welfare"
+  },
+  "thematicArea": "research-fellowship",
+  "linkageScores": {
+    "sdgScore": 5,
+    "isoScore": 2,
+    "sciScore": 5,
+    "linkageType": "research"
+  },
+  "projectPhase": generateProjectPhase()
+},
+{
+  "id": "27",
+  "department": "सहरी योजना आयोग",
+  "sector": "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
+  "subSector": "शासन प्रणाली",
+  "mainProgram": "शासन प्रणाली",
+  "programName": "KMII दोश्रो संस्करण - सातै प्रदेश बाट talent hunt बीउ पूंजी समेत",
+  "budget": 5000,
+  "budgetCode": "22522",
+  "ward": "केन्द्र",
+  "category": "मुख्य",
+  "sdg": {
+    "direct": "8 (8.3.1)",
+    "indirect": "No"
+  },
+  "iso37120": {
+    "direct": "No",
+    "indirect": "Governance, Economy"
+  },
+  "sci2025": {
+    "direct": "No",
+    "indirect": "Economy Welfare, Productivity and Job Creation"
+  },
+  "thematicArea": "economic-development",
+  "linkageScores": {
+    "sdgScore": 5,
+    "isoScore": 2,
+    "sciScore": 3,
+    "linkageType": "concurrence"
+  },
+  "projectPhase": generateProjectPhase()
+},
+{
+  "id": "28",
+  "department": "सहरी योजना आयोग",
+  "sector": "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
+  "subSector": "शासन प्रणाली",
+  "mainProgram": "शासन प्रणाली",
+  "programName": "स्थलगत नाप जाँच, सर्वे तथा अनुगमन खर्च",
+  "budget": 500,
+  "budgetCode": "22611",
+  "ward": "केन्द्र",
+  "category": "मुख्य",
+  "sdg": {
+    "direct": "No",
+    "indirect": "Peace, Justice and Strong Institutions / Industry, Innovation and Infrastructure"
+  },
+  "iso37120": {
+    "direct": "Water and Sanitation, Transport, Environment",
+    "indirect": "No"
+  },
+  "sci2025": {
+    "direct": "Pillar No. 2(Smart Governance)/ Component No.2.5/ Indicator: I-025, 026, 027",
+    "indirect": "Urban land use / Built Environment"
+  },
+  "thematicArea": "planning-implementation",
+  "linkageScores": {
+    "sdgScore": 2,
+    "isoScore": 4,
+    "sciScore": 5,
+    "linkageType": "concurrence"
+  },
+  "projectPhase": generateProjectPhase()
+},
+{
+  "id": "29",
+  "department": "सहरी योजना आयोग",
+  "sector": "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
+  "subSector": "शासन प्रणाली",
+  "mainProgram": "शासन प्रणाली",
+  "programName": "One-Door Construction Approval System संचालन",
+  "budget": 50,
+  "budgetCode": "22711",
+  "ward": "केन्द्र",
+  "category": "मुख्य",
+  "sdg": {
+    "direct": "16 (16.6.2)",
+    "indirect": "No"
+  },
+  "iso37120": {
+    "direct": "Water and Sanitation, Transport, Environment",
+    "indirect": "Governance and Economy"
+  },
+  "sci2025": {
+    "direct": "Pillar No. 2(Smart Governance)/ Component No.2.1(E-Services)/ Indicator: I-014",
+    "indirect": "Spatial Planning and Development Regulation"
+  },
+  "thematicArea": "digital-innovation",
+  "linkageScores": {
+    "sdgScore": 5,
+    "isoScore": 4,
+    "sciScore": 5,
+    "linkageType": "research"
+  },
+  "projectPhase": generateProjectPhase()
+},
+{
+  "id": "30",
+  "department": "सहरी योजना आयोग",
+  "sector": "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
+  "subSector": "शासन प्रणाली",
+  "mainProgram": "शासन प्रणाली",
+  "programName": "बैठक सञ्चालन, अतिथि सत्कार र कार्यसञ्चालन लगायत बैठक भत्ता र खाजा खर्च",
+  "budget": 1000,
+  "budgetCode": "22711",
+  "ward": "केन्द्र",
+  "category": "मुख्य",
+  "sdg": {
+    "direct": "No",
+    "indirect": "Peace, Justice and Strong Institutions / Partnerships for the goals"
+  },
+  "iso37120": {
+    "direct": "No",
+    "indirect": "Governance, Economy, Finance"
+  },
+  "sci2025": {
+    "direct": "Pillar No. 2(Smart Governance)/ Component No.2.3 / Indicator: I-020, 021",
+    "indirect": "Inclusivity, Urban Finance"
+  },
+  "thematicArea": "governance-systems",
+  "linkageScores": {
+    "sdgScore": 2,
+    "isoScore": 2,
+    "sciScore": 4,
+    "linkageType": "declaration"
+  },
+  "projectPhase": generateProjectPhase()
+},
+{
+  "id": "31",
+  "department": "सहरी योजना आयोग",
+  "sector": "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
+  "subSector": "शासन प्रणाली",
+  "mainProgram": "शासन प्रणाली",
+  "programName": "आकस्मिक तथा भैपरी आउने कार्य",
+  "budget": 1000,
+  "budgetCode": "22711",
+  "ward": "केन्द्र",
+  "category": "मुख्य",
+  "sdg": {
+    "direct": "No",
+    "indirect": "Peace, Justice and Strong Institutions / Partnerships for the goals"
+  },
+  "iso37120": {
+    "direct": "No",
+    "indirect": "Governance, Economy, Finance"
+  },
+  "sci2025": {
+    "direct": "Pillar No. 2(Smart Governance)/ Component No.2.7 / Indicator: I-031, 032, 033",
+    "indirect": "Urban land use / Built Environment"
+  },
+  "thematicArea": "disaster-resilience",
+  "linkageScores": {
+    "sdgScore": 2,
+    "isoScore": 2,
+    "sciScore": 4,
+    "linkageType": "declaration"
+  },
+  "projectPhase": generateProjectPhase()
+},
+{
+  "id": "32",
+  "department": "सहरी योजना आयोग",
+  "sector": "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
+  "subSector": "शासन प्रणाली",
+  "mainProgram": "शासन प्रणाली",
+  "programName": "AI Consortium team सञ्चालन खर्च",
+  "budget": 2000,
+  "budgetCode": "22711",
+  "ward": "केन्द्र",
+  "category": "मुख्य",
+  "sdg": {
+    "direct": "No",
+    "indirect": "Industry, Innovation and Infrastructure / Partnerships for the Goals"
+  },
+  "iso37120": {
+    "direct": "No",
+    "indirect": "Governance, Economy, Telecommunication and Innovation"
+  },
+  "sci2025": {
+    "direct": "Pillar No. 1(Smart Governance)/ Component No.1.3 / Indicator: I-008 And 3.5 I-049",
+    "indirect": "Education and Literacy, Economy Welfare"
+  },
+  "thematicArea": "digital-innovation",
+  "linkageScores": {
+    "sdgScore": 3,
+    "isoScore": 3,
+    "sciScore": 5,
+    "linkageType": "research"
+  },
+  "projectPhase": generateProjectPhase()
+},
+{
+  "id": "33",
+  "department": "सहरी योजना आयोग",
+  "sector": "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
+  "subSector": "शासन प्रणाली",
+  "mainProgram": "शासन प्रणाली",
+  "programName": "स्थानीय सतर्कता इकाई संचालन खर्च",
+  "budget": 5000,
+  "budgetCode": "22711",
+  "ward": "केन्द्र",
+  "category": "मुख्य",
+  "sdg": {
+    "direct": "11 (11.5.1)",
+    "indirect": "No"
+  },
+  "iso37120": {
+    "direct": "No",
+    "indirect": "Governance, Safety"
+  },
+  "sci2025": {
+    "direct": "Pillar No. 2(Smart Governance)/ Component No.2.7 / Indicator: I-031, 032, 033",
+    "indirect": "Urban land use / Built Environment"
+  },
+  "thematicArea": "disaster-resilience",
+  "linkageScores": {
+    "sdgScore": 5,
+    "isoScore": 2,
+    "sciScore": 5,
+    "linkageType": "research"
+  },
+  "projectPhase": generateProjectPhase()
+},
+{
+  "id": "34",
+  "department": "सहरी योजना आयोग",
+  "sector": "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
+  "subSector": "शासन प्रणाली",
+  "mainProgram": "शासन प्रणाली",
+  "programName": "TS र Level मशीन लगायतका उपकरण तथा अन्य सामग्री खरिद",
+  "budget": 1000,
+  "budgetCode": "31122",
+  "ward": "केन्द्र",
+  "category": "मुख्य",
+  "sdg": {
+    "direct": "No",
+    "indirect": "Industry, Innovation and Infrastructure / Peace, Justice and Strong Institutions"
+  },
+  "iso37120": {
+    "direct": "No",
+    "indirect": "Economy and Urban Planning"
+  },
+  "sci2025": {
+    "direct": "No",
+    "indirect": "Urban land use / Built Environment"
+  },
+  "thematicArea": "planning-implementation",
+  "linkageScores": {
+    "sdgScore": 2,
+    "isoScore": 2,
+    "sciScore": 2,
+    "linkageType": "declaration"
+  },
+  "projectPhase": generateProjectPhase()
+},
+{
+  "id": "35",
+  "department": "सहरी योजना आयोग",
+  "sector": "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
+  "subSector": "शासन प्रणाली",
+  "mainProgram": "शासन प्रणाली",
+  "programName": "सरकारी क्याम्पसको सहकार्यमा विपद व्यवस्थापन अध्ययन केन्द्र स्थापना र संचालन",
+  "budget": 2000,
+  "budgetCode": "31122",
+  "ward": "केन्द्र",
+  "category": "मुख्य",
+  "sdg": {
+    "direct": "11 (11.5.1)",
+    "indirect": "No"
+  },
+  "iso37120": {
+    "direct": "No",
+    "indirect": "Safety, Education, Governance"
+  },
+  "sci2025": {
+    "direct": "Pillar No.2(Smart Governance)/ Component No.2.7(Disaster Resiliency) / Indicator: I-031, 032",
+    "indirect": "No"
+  },
+  "thematicArea": "disaster-resilience",
+  "linkageScores": {
+    "sdgScore": 5,
+    "isoScore": 2,
+    "sciScore": 5,
+    "linkageType": "research"
+  },
+  "projectPhase": generateProjectPhase()
+},
+{
+  "id": "36",
+  "department": "सहरी योजना आयोग",
+  "sector": "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
+  "subSector": "शासन प्रणाली",
+  "mainProgram": "शासन प्रणाली",
+  "programName": "सहरी योजना आयोग कार्यालय मर्मत सम्भार",
+  "budget": 500,
+  "budgetCode": "22291",
+  "ward": "केन्द्र",
+  "category": "मुख्य",
+  "sdg": {
+    "direct": "No",
+    "indirect": "Peace, Justice and Strong Institutions / Industry, Innovation and Infrastructure"
+  },
+  "iso37120": {
+    "direct": "No",
+    "indirect": "Governance, Economy, Finance"
+  },
+  "sci2025": {
+    "direct": "Pillar No. 1/ Component No.1.2 / Indicator: I-012, Non-communicable disease",
+    "indirect": ""
+  },
+  "thematicArea": "governance-systems",
+  "linkageScores": {
+    "sdgScore": 2,
+    "isoScore": 2,
+    "sciScore": 3,
+    "linkageType": "declaration"
+  },
+  "projectPhase": generateProjectPhase()
+},
+{
+  "id": "37",
+  "department": "सहरी योजना आयोग",
+  "sector": "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
+  "subSector": "शासन प्रणाली",
+  "mainProgram": "शासन प्रणाली",
+  "programName": "कल सेन्टर संचालन तथा गुनासो सुनुवाई संयन्त्र निर्माण",
+  "budget": 2000,
+  "budgetCode": "31134",
+  "ward": "केन्द्र",
+  "category": "मुख्य",
+  "sdg": {
+    "direct": "16 (16.6.2)",
+    "indirect": "No"
+  },
+  "iso37120": {
+    "direct": "Governance",
+    "indirect": "Economy and Urban Planning"
+  },
+  "sci2025": {
+    "direct": "Pillar No.2(Smart Governance)/ Component No.2.1(E-Services)/ Indicator: I-015",
+    "indirect": "Municipal e-service defined by Citizen Charter"
+  },
+  "thematicArea": "digital-innovation",
+  "linkageScores": {
+    "sdgScore": 5,
+    "isoScore": 4,
+    "sciScore": 5,
+    "linkageType": "research"
+  },
+  "projectPhase": generateProjectPhase()
+},
+{
+  "id": "38",
+  "department": "सहरी योजना आयोग",
+  "sector": "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
+  "subSector": "शासन प्रणाली",
+  "mainProgram": "शासन प्रणाली",
+  "programName": "महत्वपुर्ण दस्ताबेजहरुको डिजिटल अभिलेखीकरण (सफ्टवेयर निर्माण समेत)",
+  "budget": 2500,
+  "budgetCode": "31134",
+  "ward": "केन्द्र",
+  "category": "मुख्य",
+  "sdg": {
+    "direct": "No",
+    "indirect": "Peace, Justice and Strong Institutions / Partnerships for the goals"
+  },
+  "iso37120": {
+    "direct": "No",
+    "indirect": "Governance, Economy, Finance"
+  },
+  "sci2025": {
+    "direct": "No",
+    "indirect": "ICT Based Land Information System / Availability of public data online"
+  },
+  "thematicArea": "digital-innovation",
+  "linkageScores": {
+    "sdgScore": 2,
+    "isoScore": 2,
+    "sciScore": 3,
+    "linkageType": "discussion"
+  },
+  "projectPhase": generateProjectPhase()
+},
+{
+  "id": "39",
+  "department": "सहरी योजना आयोग",
+  "sector": "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
+  "subSector": "शासन प्रणाली",
+  "mainProgram": "शासन प्रणाली",
+  "programName": "पूँजीगत परामर्श खर्च",
+  "budget": 1000,
+  "budgetCode": "31135",
+  "ward": "केन्द्र",
+  "category": "मुख्य",
+  "sdg": {
+    "direct": "No",
+    "indirect": "Peace, Justice and Strong Institutions / Partnerships for the goals"
+  },
+  "iso37120": {
+    "direct": "No",
+    "indirect": "Governance, Economy, Finance"
+  },
+  "sci2025": {
+    "direct": "Pillar No. 2(Smart Governance)/ Component No.2.4(Urban Finance) / Indicator: I-022, 023 024",
+    "indirect": "Economic Welfare, Urban land use / Built Environment"
+  },
+  "thematicArea": "urban-finance",
+  "linkageScores": {
+    "sdgScore": 2,
+    "isoScore": 2,
+    "sciScore": 4,
+    "linkageType": "concurrence"
+  },
+  "projectPhase": generateProjectPhase()
+},
+{
+  "id": "40",
+  "department": "सहरी योजना आयोग",
+  "sector": "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
+  "subSector": "कानुन तथा न्याय",
+  "mainProgram": "कानुन तथा न्याय",
+  "programName": "वडास्तरमा कर एवम् स्थानीय कानून सम्बन्धि कानूनी शिविर सञ्चालन र जनचेतनामूलक डिजिटल सामाग्रीहरु निर्माण गर्न नेपाल कानून तथा नीति केन्द्रलाई अनुदान",
+  "budget": 3200,
+  "budgetCode": "25315",
+  "ward": "केन्द्र",
+  "category": "मुख्य",
+  "sdg": {
+    "direct": "16 (16.6.2)",
+    "indirect": "No"
+  },
+  "iso37120": {
+    "direct": "No",
+    "indirect": "Governance, Economy, Finance, Education"
+  },
+  "sci2025": {
+    "direct": "Pillar No. 2(Smart Governance)/ Component No.2.3 / Indicator: I-020, 021",
+    "indirect": "Inclusivity, Urban Finance"
+  },
+  "thematicArea": "law-justice",
+  "linkageScores": {
+    "sdgScore": 5,
+    "isoScore": 2,
+    "sciScore": 5,
+    "linkageType": "concurrence"
+  },
+  "projectPhase": generateProjectPhase()
+},
+{
+  "id": "41",
+  "department": "सहरी योजना आयोग",
+  "sector": "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
+  "subSector": "शासन प्रणाली",
+  "mainProgram": "शासन प्रणाली",
+  "programName": "कार्ययोजना बमोजिम टेक्नोलोजि Research and Innovation Lab स्थापना तथा सञ्चालन",
+  "budget": 10000,
+  "budgetCode": "31132",
+  "ward": "केन्द्र",
+  "category": "स्वर्णीम",
+  "sdg": {
+    "direct": "No",
+    "indirect": "Industry, Innovation and Infrastructure"
+  },
+  "iso37120": {
+    "direct": "No",
+    "indirect": "Governance, Economy, Telecommunication and Innovation"
+  },
+  "sci2025": {
+    "direct": "No",
+    "indirect": "Innovation and Entrepreneurship, ICT Infrastructure and Innovation"
+  },
+  "thematicArea": "digital-innovation",
+  "linkageScores": {
+    "sdgScore": 3,
+    "isoScore": 3,
+    "sciScore": 4,
+    "linkageType": "research"
+  },
+  "projectPhase": generateProjectPhase()
+},
+{
+  "id": "42",
+  "department": "सहरी योजना आयोग",
+  "sector": "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
+  "subSector": "शासन प्रणाली",
+  "mainProgram": "शासन प्रणाली",
+  "programName": "कार्ययोजना बमोजिम प्रशासनीक सुधार अनुसन्धानको लागि संरचनागत व्यवस्था",
+  "budget": 2500,
+  "budgetCode": "31132",
+  "ward": "केन्द्र",
+  "category": "स्वर्णीम",
+  "sdg": {
+    "direct": "No",
+    "indirect": "Peace, Justice and Strong Institutions / Partnerships for the goals"
+  },
+  "iso37120": {
+    "direct": "No",
+    "indirect": "Governance, Economy, Finance"
+  },
+  "sci2025": {
+    "direct": "Pillar No. 2/ Component No.2.1 / Indicator: I-014, And 2.3 I-020, 021",
+    "indirect": "Economic Welfare, Urban Finance"
+  },
+  "thematicArea": "governance-systems",
+  "linkageScores": {
+    "sdgScore": 2,
+    "isoScore": 2,
+    "sciScore": 4,
+    "linkageType": "research"
+  },
+  "projectPhase": generateProjectPhase()
+},
+{
+  "id": "43",
+  "department": "सहरी योजना आयोग",
+  "sector": "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
+  "subSector": "शासन प्रणाली",
+  "mainProgram": "शासन प्रणाली",
+  "programName": "कार्ययोजना बमोजिम उद्यमशीलता र व्यवसाय इन्क्युवेसन का लगि विभिन्न संघ संस्थाहरु संग को सहकार्य",
+  "budget": 10000,
+  "budgetCode": "31132",
+  "ward": "केन्द्र",
+  "category": "स्वर्णीम",
+  "sdg": {
+    "direct": "8 (8.3.1)",
+    "indirect": "No"
+  },
+  "iso37120": {
+    "direct": "No",
+    "indirect": "Governance, Economy, Urban planning"
+  },
+  "sci2025": {
+    "direct": "Pillar No. 4(Smart Economy)/ Component No.4.2(Innovation and Entrepreneurship) / Indicator: I-076, 077",
+    "indirect": "Productivity and Job Creation"
+  },
+  "thematicArea": "economic-development",
+  "linkageScores": {
+    "sdgScore": 5,
+    "isoScore": 2,
+    "sciScore": 5,
+    "linkageType": "research"
+  },
+  "projectPhase": generateProjectPhase()
+},
+{
+  "id": "44",
+  "department": "सहरी योजना आयोग",
+  "sector": "सुशासन तथा अन्तरसम्बन्धित क्षेत्र",
+  "subSector": "शासन प्रणाली",
+  "mainProgram": "शासन प्रणाली",
+  "programName": "कार्ययोजना बमोजिम जियो स्पासियल प्लानिङ, स्पेस तथा सेटलाईट प्रविधिको अनुशन्धान",
+  "budget": 7500,
+  "budgetCode": "31132",
+  "ward": "केन्द्र",
+  "category": "स्वर्णीम",
+  "sdg": {
+    "direct": "No",
+    "indirect": "Sustainable cities and communities, Climate Action, Partnerships for the goals"
+  },
+  "iso37120": {
+    "direct": "No",
+    "indirect": "Urban planning, Governance, Safety, economy"
+  },
+  "sci2025": {
+    "direct": "Pillar No. 3(Smart Infrastructure)/ Component No.3.7/ Indicator: I-055",
+    "indirect": "Disaster Resiliency"
+  },
+  "thematicArea": "digital-innovation",
+  "linkageScores": {
+    "sdgScore": 3,
+    "isoScore": 3,
+    "sciScore": 4,
+    "linkageType": "research"
+  },
+  "projectPhase": generateProjectPhase()
+}
 ]
 
 // Key Indicators for Urban Planning

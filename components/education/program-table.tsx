@@ -139,7 +139,7 @@ export function ProgramTable() {
             <TableHeader>
               <TableRow>
                 <TableHead className="w-16">ID</TableHead>
-                <TableHead className="min-w-[300px]">Program Name</TableHead>
+                <TableHead className="min-w-75">Program Name</TableHead>
                 <TableHead className="w-32">Thematic</TableHead>
                 <TableHead className="w-28">Budget</TableHead>
                 <TableHead className="w-36">Linkage (SDG/ISO/SCI)</TableHead>
