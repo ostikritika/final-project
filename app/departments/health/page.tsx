@@ -8,7 +8,7 @@ import { IndicatorsPanel } from "@/components/kmc-dashboard/indicators-panel"
 import { ThematicDistributionChart, PhaseDistributionChart, LinkageScoreChart } from "@/components/kmc-dashboard/charts"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
-export default function HealthDepartmentPage() {
+export default function DisasterDepartmentPage() {
   return (
     <div className="min-h-screen bg-background">
       <DashboardHeader />

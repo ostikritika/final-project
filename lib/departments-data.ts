@@ -78,7 +78,7 @@ export const departments: Department[] = [
     href: "/departments/education",
   },
 {
-    id: "security",
+    id: "disaster",
     name: "Disaster Department",
     nameNepali: "सुरक्षा तथा विपद् व्यवस्थापन",
     description: "Public safety, emergency response, and disaster management",
@@ -89,7 +89,7 @@ export const departments: Department[] = [
     programs: 42,
     budget: "NPR 158,200,000",
     status: "active",
-    href: "/departments/security",
+    href: "/departments/disaster",
   },
 
 
