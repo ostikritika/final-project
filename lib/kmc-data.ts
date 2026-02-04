@@ -1881,13 +1881,9 @@ export const kmcPrograms: KMCProgram[] = [
   thematicArea: "health-treatment",
   cycle: "",
   linkageScores: { sdgScore: 4, isoScore: 0, sciScore: 4, linkageType: "concurrence" },
-<<<<<<< HEAD
-  projectPhase: generateProjectPhase()},];// Key Indicators combining ISO, SDG, and SCI  
-  export const keyIndicators = [
-  {
-=======
-  projectPhase: generateProjectPhase()}// Key Indicators combining ISO, SDG, and SCI  
- ,
+
+  projectPhase: generateProjectPhase(),},// Key Indicators combining ISO, SDG, and SCI  
+  
 {id: "101",
   department: "स्वास्थ्य विभाग",
   sector: "सामाजिक विकास",
@@ -2433,7 +2429,6 @@ export const kmcPrograms: KMCProgram[] = [
   projectPhase: generateProjectPhase(),},]// Key Indicators combining ISO, SDG, and SCI
    export const keyIndicators=[
     {
->>>>>>> 708cc2cec662e7188fbb442e35f2e306e6389bb1
     id: "sdg-3-8",
     standard: "SDG",
     code: "3.8",
