@@ -815,7 +815,6 @@ export const kmcPrograms: KMCProgram[] = [
     linkageScores: { sdgScore: 4, isoScore: 0, sciScore: 4, linkageType: "concurrence" },
     projectPhase: generateProjectPhase(),
   },
-
   {
     id: "35",
     department: "स्वास्थ्य विभाग",
@@ -1771,13 +1770,13 @@ export const kmcPrograms: KMCProgram[] = [
   department: "स्वास्थ्य विभाग",
   sector: "सामाजिक विकास",
   subSector: "स्वास्थ्य",
-  mainProgram: "शहरी स्वास्थ्य सेवा",
-  programName: " ल्याब रिएजेन्ट तथा एक्स रे फ्लिम खरिद",
+  mainProgram: "सामुदायिक स्वास्थ्य सेवा",
+  programName: "का.म.पा.का स्वास्थ्य प्रवर्द्धन केन्द्रहरुको फोहोरमैला व्यवस्थापनको लागि परोपकार प्रसूति तथा स्त्रीरोग अस्पतालमा प्लान्ट निर्माण अनुदान",
   budget: 20000,
-  budgetCode: "31122",
-  sdg: { direct: "3.8(3.8.1)", indirect: "No" },
-  iso37120: { direct: "12.3", indirect: "No" },
-  sci2025: { direct: "Pillar No. 1/ Component No.1.1/ Indicator: I-003, Non-communicable disease", indirect: "No" },
+  budgetCode: "25312",
+  sdg: { direct: "No", indirect: "No" },
+  iso37120: { direct: "No", indirect: "16.1" },
+  sci2025: { direct: "No", indirect: "Environment" },
   thematicArea: "health-treatment",
   cycle: "",
   linkageScores: { sdgScore: 4, isoScore: 0, sciScore: 4, linkageType: "concurrence" },
@@ -1863,11 +1862,7 @@ export const kmcPrograms: KMCProgram[] = [
   linkageScores: { sdgScore: 4, isoScore: 0, sciScore: 4, linkageType: "concurrence" },
   projectPhase: generateProjectPhase(),// Key Indicators combining ISO, SDG, and SCI 
 },
-
-{id: "87",
-
-
-
+{id: "100",
   department: "स्वास्थ्य विभाग",
   sector: "सामाजिक विकास",
   subSector: "स्वास्थ्य",
@@ -1881,9 +1876,8 @@ export const kmcPrograms: KMCProgram[] = [
   thematicArea: "health-treatment",
   cycle: "",
   linkageScores: { sdgScore: 4, isoScore: 0, sciScore: 4, linkageType: "concurrence" },
-
-  projectPhase: generateProjectPhase(),},// Key Indicators combining ISO, SDG, and SCI  
-  
+  projectPhase: generateProjectPhase()}// Key Indicators combining ISO, SDG, and SCI  
+ ,
 {id: "101",
   department: "स्वास्थ्य विभाग",
   sector: "सामाजिक विकास",
@@ -1962,7 +1956,7 @@ export const kmcPrograms: KMCProgram[] = [
   thematicArea: "health-treatment",
   cycle: "",
   linkageScores: { sdgScore: 4, isoScore: 0, sciScore: 4, linkageType: "concurrence" },
-  projectPhase: generateProjectPhase()}// Key Indicators combining ISO, SDG, and SCI   export const keyIndicators = [
+  projectPhase: generateProjectPhase()}// Key Indicators combining ISO, SDG, and SCI  
   ,
 {id: "106",
   department: "स्वास्थ्य विभाग",
@@ -2090,9 +2084,8 @@ export const kmcPrograms: KMCProgram[] = [
   thematicArea: "health-treatment",
   cycle: "",
   linkageScores: { sdgScore: 4, isoScore: 0, sciScore: 4, linkageType: "concurrence" },
-  projectPhase: generateProjectPhase()}// Key Indicators combining ISO, SDG, and SCI
-  ,
-{id: "114",
+  projectPhase: generateProjectPhase()},
+  {id: "114",
   department: "स्वास्थ्य विभाग",
   sector: "सामाजिक विकास",
   subSector: "स्वास्थ्य",
@@ -2426,9 +2419,12 @@ export const kmcPrograms: KMCProgram[] = [
   thematicArea: "health-treatment",
   cycle: "",
   linkageScores: { sdgScore: 4, isoScore: 0, sciScore: 4, linkageType: "concurrence" },
-  projectPhase: generateProjectPhase(),},]// Key Indicators combining ISO, SDG, and SCI
-   export const keyIndicators=[
-    {
+  projectPhase: generateProjectPhase(),},
+  
+]
+// Key Indicators combining ISO, SDG, and SCI
+export const keyIndicators = [
+  {
     id: "sdg-3-8",
     standard: "SDG",
     code: "3.8",
@@ -2444,7 +2440,8 @@ export const kmcPrograms: KMCProgram[] = [
     code: "3.4",
     name: "NCD Prevention & Treatment",
     nameNp: "गैरसंचारी रोग रोकथाम",
-    description: "Reduce premature mortality from non-communicable diseases through prevention and treatment",
+    description:
+      "Reduce premature mortality from non-communicable diseases through prevention and treatment",
     relatedPrograms: 12,
   },
   {
@@ -2501,4 +2498,4 @@ export const kmcPrograms: KMCProgram[] = [
     description: "I-071: EMR adoption, I-073: HMIS usage",
     relatedPrograms: 8,
   },
-]
+];

@@ -1,9 +1,7 @@
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { thematicAreas, projectPhases } from "@/lib/kmc-data";
-import { disasterPrograms } from "@/lib/disaster";
-
+import { disasterThematicAreas, projectPhases, disasterPrograms } from "@/lib/disaster";
 import {
   PieChart,
   Pie,
@@ -17,14 +15,15 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
+// ------------------------
+// Pie chart: Programs by thematic area
+// ------------------------
 export function ThematicDistributionChart() {
-  const data = thematicAreas
+  const data = disasterThematicAreas
     .map((area) => ({
       name: area.name,
-      value: disasterPrograms.filter(
-        (p) => p.thematicArea === area.id
-      ).length,
-      color: area.color,
+      value: disasterPrograms.filter((p) => p.thematicArea === area.id).length,
+      color: area.color || "#6B7280", // fallback gray if no color
     }))
     .filter((d) => d.value > 0);
 
@@ -49,12 +48,13 @@ export function ThematicDistributionChart() {
   );
 }
 
+// ------------------------
+// Bar chart: Programs by project phase
+// ------------------------
 export function PhaseDistributionChart() {
   const data = projectPhases.map((phase) => ({
     name: phase.label,
-    count: disasterPrograms.filter(
-      (p) => p.projectPhase.phase === phase.value
-    ).length,
+    count: disasterPrograms.filter((p) => p.projectPhase.phase === phase.value).length,
   }));
 
   return (
@@ -67,9 +67,9 @@ export function PhaseDistributionChart() {
           <BarChart data={data}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
-            <YAxis />
+            <YAxis allowDecimals={false} />
             <Tooltip />
-            <Bar dataKey="count" />
+            <Bar dataKey="count" fill="#3B82F6" />
           </BarChart>
         </ResponsiveContainer>
       </CardContent>
@@ -77,10 +77,12 @@ export function PhaseDistributionChart() {
   );
 }
 
+// ------------------------
+// Bar chart: Average linkage scores
+// ------------------------
 export function LinkageScoreChart() {
   const avg = (key: "sdgScore" | "isoScore" | "sciScore") =>
-    disasterPrograms.reduce((s, p) => s + p.linkageScores[key], 0) /
-    disasterPrograms.length;
+    disasterPrograms.reduce((s, p) => s + p.linkageScores[key], 0) / disasterPrograms.length;
 
   const data = [
     { name: "SDG", value: avg("sdgScore") },
@@ -96,10 +98,10 @@ export function LinkageScoreChart() {
       <CardContent className="h-64">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart data={data} layout="vertical">
-            <XAxis type="number" domain={[0, 5]} />
+            <XAxis type="number" domain={[0, 4]} />
             <YAxis type="category" dataKey="name" />
             <Tooltip />
-            <Bar dataKey="value" />
+            <Bar dataKey="value" fill="#F59E0B" />
           </BarChart>
         </ResponsiveContainer>
       </CardContent>

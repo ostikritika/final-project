@@ -43,7 +43,8 @@ export const departments: Department[] = [
     color: "text-rose-600",
     bgColor: "bg-rose-50",
     borderColor: "border-rose-200",
-    programs: 131,
+
+    programs: 134,
     budget: "NPR 706,497,000",
     status: "active",
     href: "/departments/health",
@@ -78,7 +79,9 @@ export const departments: Department[] = [
     href: "/departments/education",
   },
 {
+
     id: "disaster",
+
     name: "Disaster Department",
     nameNepali: "सुरक्षा तथा विपद् व्यवस्थापन",
     description: "Public safety, emergency response, and disaster management",
@@ -89,7 +92,9 @@ export const departments: Department[] = [
     programs: 42,
     budget: "NPR 158,200,000",
     status: "active",
+
     href: "/departments/disaster",
+
   },
 
 

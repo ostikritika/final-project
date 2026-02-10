@@ -33,22 +33,9 @@ import {
   TableRow,
 } from "@/components/ui/table"
 
-import {
-  disasterPrograms,
-  disasterThematicAreas,
-  type KMCProgram,
-} from "@/lib/disaster"
+import { disasterPrograms, disasterThematicAreas, KMCProgram } from "@/lib/disaster"
 
-import { LinkageScale } from "./linkage-scale"
-import { ProjectPhase } from "./project-phase"
-
-import {
-  Search,
-  Filter,
-  Eye,
-  ChevronLeft,
-  ChevronRight,
-} from "lucide-react"
+import { Search, Filter, Eye, ChevronLeft, ChevronRight } from "lucide-react"
 
 const ITEMS_PER_PAGE = 10
 
@@ -57,8 +44,24 @@ export function ProgramTable() {
   const [thematicFilter, setThematicFilter] = useState("all")
   const [phaseFilter, setPhaseFilter] = useState("all")
   const [currentPage, setCurrentPage] = useState(1)
-  const [selectedProgram, setSelectedProgram] =
-    useState<KMCProgram | null>(null)
+
+  // ---------------- COUNT STANDARDS ----------------
+  const sdgCount: Record<string, number> = {}
+  const isoCount: Record<string, number> = {}
+  const sciCount: Record<string, number> = {}
+
+  disasterPrograms.forEach((p) => {
+    if (p.sdg?.direct && p.sdg.direct !== "No") {
+      sdgCount[p.sdg.direct] = (sdgCount[p.sdg.direct] || 0) + 1
+    }
+    if (p.iso37120?.direct && p.iso37120.direct !== "No") {
+      isoCount[p.iso37120.direct] = (isoCount[p.iso37120.direct] || 0) + 1
+    }
+    if (p.sci2025?.direct && p.sci2025.direct !== "No") {
+      sciCount[p.sci2025.direct] = (sciCount[p.sci2025.direct] || 0) + 1
+    }
+  })
+  // ------------------------------------------------
 
   const filteredPrograms = disasterPrograms.filter((program) => {
     const matchesSearch =
@@ -66,12 +69,10 @@ export function ProgramTable() {
       program.mainProgram.toLowerCase().includes(search.toLowerCase())
 
     const matchesThematic =
-      thematicFilter === "all" ||
-      program.thematicArea === thematicFilter
+      thematicFilter === "all" || program.thematicArea === thematicFilter
 
     const matchesPhase =
-      phaseFilter === "all" ||
-      program.projectPhase.phase === phaseFilter
+      phaseFilter === "all" || program.projectPhase.phase === phaseFilter
 
     return matchesSearch && matchesThematic && matchesPhase
   })
@@ -82,25 +83,8 @@ export function ProgramTable() {
     currentPage * ITEMS_PER_PAGE
   )
 
-  const getThematicColor = (id?: string) => {
-    const area = disasterThematicAreas.find((a) => a.id === id)
-    return area?.color || "#6B7280"
-  }
-
-  const getThematicName = (id?: string) => {
-    const area = disasterThematicAreas.find((a) => a.id === id)
-    return area?.name || id
-  }
-
-  const getPhaseColor = (phase: string) => {
-    const colors: Record<string, string> = {
-      planning: "bg-gray-100 text-gray-700",
-      preparedness: "bg-blue-100 text-blue-700",
-      response: "bg-amber-100 text-amber-700",
-      recovery: "bg-green-100 text-green-700",
-    }
-    return colors[phase] || "bg-gray-100 text-gray-700"
-  }
+  const getThematicName = (id?: string) =>
+    disasterThematicAreas.find((a) => a.id === id)?.name || id
 
   return (
     <Card>
@@ -115,7 +99,7 @@ export function ProgramTable() {
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-3">
+          <div className="flex flex-wrap gap-3">
             {/* Search */}
             <div className="relative">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
@@ -130,151 +114,122 @@ export function ProgramTable() {
               />
             </div>
 
-            {/* Thematic Filter */}
-            <Select
-              value={thematicFilter}
-              onValueChange={(v) => {
-                setThematicFilter(v)
-                setCurrentPage(1)
-              }}
-            >
-              <SelectTrigger className="w-44">
-                <Filter className="h-4 w-4 mr-2" />
-                <SelectValue placeholder="Thematic Area" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">All Areas</SelectItem>
-                {disasterThematicAreas.map((area) => (
-                  <SelectItem key={area.id} value={area.id}>
-                    {area.name}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+            {/* Count Dialog */}
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button variant="outline">Count of Standards</Button>
+              </DialogTrigger>
 
-            {/* Phase Filter */}
-            <Select
-              value={phaseFilter}
-              onValueChange={(v) => {
-                setPhaseFilter(v)
-                setCurrentPage(1)
-              }}
-            >
-              <SelectTrigger className="w-40">
-                <SelectValue placeholder="Phase" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">All Phases</SelectItem>
-                <SelectItem value="planning">Planning</SelectItem>
-                <SelectItem value="preparedness">Preparedness</SelectItem>
-                <SelectItem value="response">Response</SelectItem>
-                <SelectItem value="recovery">Recovery</SelectItem>
-              </SelectContent>
-            </Select>
+              <DialogContent className="max-w-lg">
+                <DialogHeader>
+                  <DialogTitle>Standards Coverage</DialogTitle>
+                </DialogHeader>
+
+                <div className="space-y-4 text-sm">
+                  <div>
+                    <h3 className="font-semibold mb-2">SDG</h3>
+                    {Object.entries(sdgCount).map(([k, v]) => (
+                      <p key={k}>SDG {k} → {v} programs</p>
+                    ))}
+                  </div>
+
+                  <div>
+                    <h3 className="font-semibold mb-2">ISO 37120</h3>
+                    {Object.entries(isoCount).map(([k, v]) => (
+                      <p key={k}>ISO {k} → {v} programs</p>
+                    ))}
+                  </div>
+
+                  <div>
+                    <h3 className="font-semibold mb-2">SCI 2025</h3>
+                    {Object.entries(sciCount).map(([k, v]) => (
+                      <p key={k}>{k} → {v} programs</p>
+                    ))}
+                  </div>
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
       </CardHeader>
 
       <CardContent>
+        {/* ✅ TABLE RESTORED */}
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>ID</TableHead>
-              <TableHead>Program</TableHead>
-              <TableHead>Thematic</TableHead>
+              <TableHead>Program Name</TableHead>
+              <TableHead>Thematic Area</TableHead>
               <TableHead>Budget</TableHead>
-              <TableHead>Scores</TableHead>
-              <TableHead>Phase</TableHead>
-              <TableHead />
+              <TableHead>Standards</TableHead>
+              <TableHead className="text-right">Action</TableHead>
             </TableRow>
           </TableHeader>
 
           <TableBody>
             {paginatedPrograms.map((program) => (
               <TableRow key={program.id}>
-                <TableCell className="font-mono text-xs">
-                  {program.id}
+                <TableCell className="font-medium">
+                  {program.programName}
                 </TableCell>
 
                 <TableCell>
-                  <p className="font-medium">{program.programName}</p>
-                  <p className="text-xs text-muted-foreground">
-                    {program.mainProgram}
-                  </p>
+                  {getThematicName(program.thematicArea)}
                 </TableCell>
 
                 <TableCell>
-                  <Badge
-                    variant="outline"
-                    style={{
-                      borderColor: getThematicColor(program.thematicArea),
-                      color: getThematicColor(program.thematicArea),
-                    }}
-                  >
-                    {getThematicName(program.thematicArea)}
-                  </Badge>
+                  Rs {program.budget.toLocaleString()}
                 </TableCell>
 
-                <TableCell className="font-mono text-xs">
-                  रु. {program.budget.toLocaleString()}
+                {/* SDG + ISO only (clean colors) */}
+                <TableCell className="space-x-2">
+                  {program.sdg.direct !== "No" && (
+                    <Badge className="bg-blue-100 text-blue-700">
+                      SDG {program.sdg.direct}
+                    </Badge>
+                  )}
+                  {program.iso37120.direct !== "No" && (
+                    <Badge className="bg-emerald-100 text-emerald-700">
+                      ISO {program.iso37120.direct}
+                    </Badge>
+                  )}
                 </TableCell>
 
-                <TableCell>
-                  <div className="flex gap-1">
-                    <span className="w-6 h-6 flex items-center justify-center rounded bg-blue-100 text-blue-700 text-xs">
-                      {program.linkageScores.sdgScore}
-                    </span>
-                    <span className="w-6 h-6 flex items-center justify-center rounded bg-green-100 text-green-700 text-xs">
-                      {program.linkageScores.isoScore}
-                    </span>
-                    <span className="w-6 h-6 flex items-center justify-center rounded bg-amber-100 text-amber-700 text-xs">
-                      {program.linkageScores.sciScore}
-                    </span>
-                  </div>
-                </TableCell>
-
-                <TableCell>
-                  <Badge className={getPhaseColor(program.projectPhase.phase)}>
-                    {program.projectPhase.phase}
-                  </Badge>
-                </TableCell>
-
-                <TableCell>
+                {/* ACTION FIXED */}
+                <TableCell className="text-right">
                   <Dialog>
                     <DialogTrigger asChild>
-                      <Button
-                        size="sm"
-                        variant="ghost"
-                        onClick={() => setSelectedProgram(program)}
-                      >
-                        <Eye className="h-4 w-4" />
+                      <Button variant="ghost" size="sm">
+                        <Eye className="w-4 h-4" />
                       </Button>
                     </DialogTrigger>
 
-                    <DialogContent>
+                    <DialogContent className="max-w-xl">
                       <DialogHeader>
                         <DialogTitle>Program Details</DialogTitle>
                       </DialogHeader>
 
-                      {selectedProgram && (
-                        <div className="space-y-6">
-                          <LinkageScale
-                            sdgScore={selectedProgram.linkageScores.sdgScore}
-                            isoScore={selectedProgram.linkageScores.isoScore}
-                            sciScore={selectedProgram.linkageScores.sciScore}
-                            linkageType={
-                              selectedProgram.linkageScores.linkageType
-                            }
-                          />
+                      <div className="space-y-3 text-sm">
+                        <p className="font-semibold">
+                          {program.programName}
+                        </p>
+                        <p>Main Program: {program.mainProgram}</p>
+                        <p>Budget: Rs {program.budget.toLocaleString()}</p>
+                        <p>Thematic Area: {getThematicName(program.thematicArea)}</p>
 
-                          <ProjectPhase
-                            phase={selectedProgram.projectPhase.phase}
-                            progress={
-                              selectedProgram.projectPhase.progress ?? 0
-                            }
-                          />
+                        <div className="flex gap-2 pt-2">
+                          {program.sdg.direct !== "No" && (
+                            <Badge className="bg-blue-100 text-blue-700">
+                              SDG {program.sdg.direct}
+                            </Badge>
+                          )}
+                          {program.iso37120.direct !== "No" && (
+                            <Badge className="bg-emerald-100 text-emerald-700">
+                              ISO {program.iso37120.direct}
+                            </Badge>
+                          )}
                         </div>
-                      )}
+                      </div>
                     </DialogContent>
                   </Dialog>
                 </TableCell>
@@ -283,24 +238,19 @@ export function ProgramTable() {
           </TableBody>
         </Table>
 
-        {/* Pagination */}
-        <div className="flex justify-between items-center mt-4">
+        {/* PAGINATION */}
+        <div className="flex justify-end gap-2 mt-4">
           <Button
-            size="sm"
             variant="outline"
+            size="sm"
             disabled={currentPage === 1}
             onClick={() => setCurrentPage((p) => p - 1)}
           >
             <ChevronLeft className="h-4 w-4" />
           </Button>
-
-          <span className="text-sm">
-            Page {currentPage} of {totalPages}
-          </span>
-
           <Button
-            size="sm"
             variant="outline"
+            size="sm"
             disabled={currentPage === totalPages}
             onClick={() => setCurrentPage((p) => p + 1)}
           >

@@ -34,7 +34,8 @@ export function DisasterStatsCards() {
     {
       title: "Total Budget",
       titleNp: "कुल बजेट",
-      value: `रु. ${(totalBudget / 1000).toFixed(1)} करोड`,
+      // Showing in million instead of /1000K for clarity
+      value: `रु. ${(totalBudget / 1_000_000).toFixed(2)} arab`,
       icon: DollarSign,
       color: "text-green-600",
       bgColor: "bg-green-50",
@@ -42,7 +43,7 @@ export function DisasterStatsCards() {
     {
       title: "Avg. Linkage Score",
       titleNp: "औसत सम्बन्धन स्कोर",
-      value: avgLinkage.toFixed(1) + "/5",
+      value: avgLinkage.toFixed(1) + "/4", // max score is 4 as per disaster.ts
       icon: Target,
       color: "text-amber-600",
       bgColor: "bg-amber-50",
@@ -63,23 +64,17 @@ export function DisasterStatsCards() {
         const Icon = stat.icon
 
         return (
-          <Card key={stat.title} className="border border-border">
+          <Card key={stat.title} className="border border-border hover:shadow-md transition-shadow">
             <CardContent className="p-5">
-              <div className="flex items-start justify-between">
+              <div className="flex items-start justify-between gap-4">
                 <div>
-                  <p className="text-sm font-medium text-muted-foreground">
-                    {stat.title}
-                  </p>
-                  <p className="text-xs text-muted-foreground/70">
-                    {stat.titleNp}
-                  </p>
-                  <p className="text-2xl font-bold mt-2 text-foreground">
-                    {stat.value}
-                  </p>
+                  <p className="text-sm font-medium text-muted-foreground">{stat.title}</p>
+                  <p className="text-xs text-muted-foreground/70">{stat.titleNp}</p>
+                  <p className="text-2xl font-bold mt-2 text-foreground">{stat.value}</p>
                 </div>
 
                 {Icon && (
-                  <div className={`p-3 rounded-lg ${stat.bgColor}`}>
+                  <div className={`p-3 rounded-lg flex items-center justify-center ${stat.bgColor}`}>
                     <Icon className={`w-5 h-5 ${stat.color}`} />
                   </div>
                 )}

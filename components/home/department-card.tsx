@@ -1,3 +1,4 @@
+
 import Link from "next/link"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -36,8 +37,6 @@ export function DepartmentCard({ department }: DepartmentCardProps) {
 >
   {department.status === "active" ? "Active" : "Inactive"}
 </Badge>
-
-
 
           </div>
         </CardHeader>

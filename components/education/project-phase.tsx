@@ -3,64 +3,57 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
-import { CheckCircle2, Circle, Clock, Flag, AlertTriangle } from "lucide-react"
+import { CheckCircle2, Circle, Clock, FileCheck, Award, Flag } from "lucide-react"
 
 interface ProjectPhaseProps {
   phase: "inception" | "approval" | "tender" | "award" | "completion"
   progress: number
 }
 
-const phaseConfig: Record<ProjectPhaseProps["phase"], {
-  icon: any
-  color: string
-  bgColor: string
-  label: string
-  labelNp: string
-  range: string
-}> = {
+const phaseConfig = {
   inception: {
     icon: Circle,
     color: "text-gray-500",
     bgColor: "bg-gray-100",
     label: "Inception",
-    labelNp: "योजना",
-    range: "0-25%",
+    labelNp: "आरम्भ",
+    range: "0-20%",
   },
   approval: {
-    icon: Clock,
+    icon: FileCheck,
     color: "text-blue-500",
     bgColor: "bg-blue-100",
     label: "Approval",
-    labelNp: "तयारी",
-    range: "26-40%",
+    labelNp: "स्वीकृति",
+    range: "21-40%",
   },
   tender: {
-    icon: AlertTriangle,
+    icon: Clock,
     color: "text-amber-500",
     bgColor: "bg-amber-100",
     label: "Tender",
-    labelNp: "टेन्डर",
+    labelNp: "बोलपत्र",
     range: "41-60%",
   },
   award: {
-    icon: Flag,
+    icon: Award,
     color: "text-purple-500",
     bgColor: "bg-purple-100",
     label: "Award",
-    labelNp: "पुरस्कार",
+    labelNp: "सम्झौता",
     range: "61-80%",
   },
   completion: {
-    icon: CheckCircle2,
+    icon: Flag,
     color: "text-green-500",
     bgColor: "bg-green-100",
     label: "Completion",
-    labelNp: "पूर्णता",
+    labelNp: "सम्पन्न",
     range: "81-100%",
   },
 }
 
-const phases: ProjectPhaseProps["phase"][] = [
+const phases: ("inception" | "approval" | "tender" | "award" | "completion")[] = [
   "inception",
   "approval",
   "tender",
@@ -99,6 +92,7 @@ export function ProjectPhase({ phase, progress }: ProjectPhaseProps) {
                       ? "bg-green-100"
                       : "bg-muted"
                 }`}
+                style={isActive ? { ringColor: config.color.replace("text-", "") } : {}}
               >
                 {isCompleted ? (
                   <CheckCircle2 className="w-4 h-4 text-green-500" />
@@ -117,19 +111,17 @@ export function ProjectPhase({ phase, progress }: ProjectPhaseProps) {
   )
 }
 
-export function DisasterProjectPhaseLegend() {
+export function ProjectPhaseLegend() {
   return (
     <Card className="border border-border">
       <CardHeader className="pb-3">
         <CardTitle className="text-lg font-semibold flex items-center gap-2 text-foreground">
-          Disaster Project Phases
+          Evaluation Regime Tool
           <Badge variant="outline" className="text-xs font-normal">
             0-100%
           </Badge>
         </CardTitle>
-        <p className="text-sm text-muted-foreground">
-          Track disaster project lifecycle from planning to recovery
-        </p>
+        <p className="text-sm text-muted-foreground">Track project lifecycle from inception to completion</p>
       </CardHeader>
       <CardContent>
         <div className="space-y-3">
