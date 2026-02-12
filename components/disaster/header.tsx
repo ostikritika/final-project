@@ -1,14 +1,15 @@
 "use client"
 
 import Link from "next/link"
-import { Globe, FileText, BarChart3, ArrowLeft, AlertTriangle } from "lucide-react"
+import { Globe, FileText, BarChart3, ArrowLeft, GraduationCap } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 
-export function DashboardHeader() {
+export default function DisasterHeader() {
   return (
     <header className="border-b border-border bg-card">
       <div className="container mx-auto px-4 py-6">
+        {/* Back Button */}
         <div className="mb-4">
           <Button
             variant="ghost"
@@ -23,24 +24,21 @@ export function DashboardHeader() {
           </Button>
         </div>
 
+        {/* Header Content */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          {/* Left Section: Icon + Title */}
           <div className="flex items-center gap-4">
-            <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-orange-100 text-orange-600">
-              <AlertTriangle className="w-8 h-8" />
+            <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-blue-100 text-blue-600">
+              <GraduationCap className="w-8 h-8" />
             </div>
             <div>
-              <p className="text-sm text-muted-foreground font-medium">
-                काठमाडौं महानगरपालिका
-              </p>
-              <h1 className="text-2xl font-bold text-foreground">
-                Disaster Management Department | बिपद व्यवस्थापन विभाग
-              </h1>
-              <p className="text-muted-foreground text-sm">
-                Program Mapping & Evaluation System
-              </p>
+              <p className="text-sm text-muted-foreground font-medium">काठमाडौं महानगरपालिका</p>
+              <h1 className="text-2xl font-bold text-foreground">Disaster Department | विपद् व्यवस्थापन विभाग</h1>
+              <p className="text-muted-foreground text-sm">Program Mapping & Evaluation System</p>
             </div>
           </div>
 
+          {/* Right Section: Badges */}
           <div className="flex flex-wrap items-center gap-2">
             <Badge variant="outline" className="flex items-center gap-1.5 px-3 py-1.5">
               <Globe className="w-3.5 h-3.5 text-blue-500" />

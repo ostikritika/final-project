@@ -73,7 +73,7 @@ export const departments: Department[] = [
     color: "text-amber-600",
     bgColor: "bg-amber-50",
     borderColor: "border-amber-200",
-    programs: 136,
+    programs: 135,
     budget: "NPR 1,049,098,000",
     status: "active",
     href: "/departments/education",

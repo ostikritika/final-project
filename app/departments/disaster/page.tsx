@@ -1,22 +1,28 @@
 "use client";
 
-import { disasterPrograms } from "@/lib/disaster";
+import { disasterPrograms } from "@/lib/disaster-data";
 
 // Dashboard components
-import { DashboardHeader } from "@/components/disaster-dashboard/header";
-import { DisasterStatsCards } from "@/components/disaster-dashboard/stats-cards";
-import { ThematicOverviewDisaster } from "@/components/disaster-dashboard/thematic-overview";
-import { LinkageScale } from "@/components/disaster-dashboard/linkage-scale";
-import { ProjectPhase } from "@/components/disaster-dashboard/project-phase";
-import { ProgramTable } from "@/components/disaster-dashboard/program-tables";
-import { IndicatorsPanel } from "@/components/disaster-dashboard/indicators-panel";
+import DashboardHeader from "@/components/disaster/header";
+import { StatsCards } from "@/components/disaster/stats-cards";
+import { ThematicOverview } from "@/components/disaster/thematic-overview";
+import { LinkageScale } from "@/components/disaster/linkage-scale";
+import 
+
+
+
+
+
+{ ProjectPhase } from "@/components/disaster/project-phase";
+import { ProgramTable } from "@/components/disaster/program-table";
+import { IndicatorsPanel } from "@/components/disaster/indicators-panel";
 
 // Charts
 import {
   ThematicDistributionChart,
   PhaseDistributionChart,
   LinkageScoreChart,
-} from "@/components/disaster-dashboard/charts";
+} from "@/components/disaster/charts";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
@@ -26,8 +32,8 @@ export default function DisasterDepartmentPage() {
       <DashboardHeader />
 
       <main className="container mx-auto px-4 py-6 space-y-6">
-        <DisasterStatsCards programs={disasterPrograms} />
-        <ThematicOverviewDisaster programs={disasterPrograms} />
+        <StatsCards programs={disasterPrograms} />
+        <ThematicOverview programs={disasterPrograms} />
 
         <Tabs defaultValue="programs" className="space-y-4">
           <TabsList className="grid w-full grid-cols-4 lg:w-auto">

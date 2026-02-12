@@ -35,58 +35,44 @@ const linkageTypeInfo = {
   },
 }
 
-export function LinkageScale({
-  sdgScore,
-  isoScore,
-  sciScore,
-  linkageType,
-}: LinkageScaleProps) {
+export function LinkageScale({ sdgScore, isoScore, sciScore, linkageType }: LinkageScaleProps) {
   const typeInfo = linkageTypeInfo[linkageType]
 
-  const renderScale = (score: number, label: string, color: string) => (
-    <div className="space-y-1.5">
-      <div className="flex items-center justify-between">
-        <span className="text-xs font-medium text-foreground">{label}</span>
-        <span className="text-xs font-bold text-foreground">{score}/5</span>
+  const renderScale = (score: number, label: string, color: string) => {
+    return (
+      <div className="space-y-1.5">
+        <div className="flex items-center justify-between">
+          <span className="text-xs font-medium text-foreground">{label}</span>
+          <span className="text-xs font-bold text-foreground">{score}/5</span>
+        </div>
+        <div className="flex gap-1">
+          {[0, 1, 2, 3, 4, 5].map((level) => (
+            <div
+              key={level}
+              className={`h-2 flex-1 rounded-sm transition-colors ${level <= score ? color : "bg-muted"}`}
+            />
+          ))}
+        </div>
+        <div className="flex justify-between text-[10px] text-muted-foreground">
+          <span>No Link</span>
+          <span>Indirect</span>
+          <span>Direct</span>
+        </div>
       </div>
-
-      <div className="flex gap-1">
-        {[0, 1, 2, 3, 4, 5].map((level) => (
-          <div
-            key={level}
-            className={`h-2 flex-1 rounded-sm ${
-              level <= score ? color : "bg-muted"
-            }`}
-          />
-        ))}
-      </div>
-
-      <div className="flex justify-between text-[10px] text-muted-foreground">
-        <span>No Link</span>
-        <span>Indirect</span>
-        <span>Direct</span>
-      </div>
-    </div>
-  )
+    )
+  }
 
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between">
-        <h4 className="text-sm font-medium text-foreground">
-          Disaster Program Linkage Scale (0–5)
-        </h4>
-
+        <h4 className="text-sm font-medium text-foreground">Linkage Scale (0-5)</h4>
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger>
-             <Badge className={`${typeInfo?.color ?? "bg-gray-500"} text-white text-xs`}>
-  {typeInfo?.label ?? "Unknown"}
-</Badge>
+              <Badge className={`${typeInfo.color} text-white text-xs`}>{typeInfo.label}</Badge>
             </TooltipTrigger>
             <TooltipContent>
-<p className="max-w-xs text-xs">
-  {typeInfo?.description ?? "No description available"}
-</p>
+              <p className="max-w-xs text-xs">{typeInfo.description}</p>
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>
@@ -101,7 +87,7 @@ export function LinkageScale({
       <div className="pt-2 border-t border-border">
         <div className="flex items-center gap-2 text-xs text-muted-foreground">
           <Info className="w-3.5 h-3.5" />
-          <span>0: No Link | 1–2: Indirect | 3–4: Partial Direct | 5: Full Direct</span>
+          <span>0: No Link | 1-2: Indirect | 3-4: Partial Direct | 5: Full Direct</span>
         </div>
       </div>
     </div>
@@ -113,18 +99,16 @@ export function LinkageScaleLegend() {
     <Card className="border border-border">
       <CardHeader className="pb-3">
         <CardTitle className="text-lg font-semibold flex items-center gap-2 text-foreground">
-          Disaster Linkage Scale Legend
+          Likert Scale Legend
           <Badge variant="outline" className="text-xs font-normal">
-            0–5 Scale
+            0-5 Scale
           </Badge>
         </CardTitle>
       </CardHeader>
-
       <CardContent>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-3">
             <h4 className="text-sm font-medium text-foreground">Linkage Scores</h4>
-
             <div className="space-y-2">
               {[
                 { score: 0, label: "No Linkage", desc: "No connection to standard" },
@@ -140,10 +124,10 @@ export function LinkageScaleLegend() {
                       item.score === 0
                         ? "bg-muted text-muted-foreground"
                         : item.score <= 2
-                        ? "bg-amber-100 text-amber-700"
-                        : item.score <= 4
-                        ? "bg-blue-100 text-blue-700"
-                        : "bg-green-100 text-green-700"
+                          ? "bg-amber-100 text-amber-700"
+                          : item.score <= 4
+                            ? "bg-blue-100 text-blue-700"
+                            : "bg-green-100 text-green-700"
                     }`}
                   >
                     {item.score}
@@ -159,7 +143,6 @@ export function LinkageScaleLegend() {
 
           <div className="space-y-3">
             <h4 className="text-sm font-medium text-foreground">Verification Types</h4>
-
             <div className="space-y-2">
               {Object.entries(linkageTypeInfo).map(([key, info]) => (
                 <div key={key} className="flex items-center gap-3">
