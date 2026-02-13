@@ -14,7 +14,7 @@ export function HeroSection() {
           {/* Logo and Badge */}
           <div className="flex items-center gap-3">
             <div className="p-3 bg-primary/10 rounded-full">
-              <Building2 className="h-8 w-8 text-primary" />
+              <Building2 className="h-8 w-8 text-primary"/>
             </div>
             <Badge variant="secondary" className="text-sm py-1 px-3">
               <MapPin className="h-3.5 w-3.5 mr-1.5" />
@@ -62,11 +62,20 @@ export function HeroSection() {
           <Link href="/departments/budget-allocation">
             <Card className="mt-6 w-64 cursor-pointer hover:shadow-lg transition-shadow">
             <CardHeader className="flex items-center justify-center gap-2">
-              {/* <DollarSign className="h-5 w-5 text-primary" /> */}
               <CardTitle>Budget Allocation Of Individual Department </CardTitle>
             </CardHeader>
             </Card>
           </Link>
+
+
+          <Link href="/departments/comparision">
+            <Card className="mt-6 w-64 cursor-pointer hover:shadow-lg transition-shadow">
+            <CardHeader className="flex items-center justify-center gap-2">
+              <CardTitle>Ward-Data Comparision with National And International Standards</CardTitle>
+            </CardHeader>
+            </Card>
+          </Link>
+
         </div>
       </div>
     </section>
