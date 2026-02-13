@@ -12,7 +12,8 @@ interface LinkageScaleProps {
   linkageType: "research" | "discussion" | "concurrence" | "declaration"
 }
 
-const linkageTypeInfo = {
+// Safe default for linkage type info
+const linkageTypeInfo: Record<string, { label: string; color: string; description: string }> = {
   research: {
     label: "Research-Based",
     color: "bg-green-500",
@@ -36,20 +37,22 @@ const linkageTypeInfo = {
 }
 
 export function LinkageScale({ sdgScore, isoScore, sciScore, linkageType }: LinkageScaleProps) {
-  const typeInfo = linkageTypeInfo[linkageType]
+  // Fallback to "declaration" if linkageType is invalid
+  const typeInfo = linkageTypeInfo[linkageType] ?? linkageTypeInfo.declaration
 
   const renderScale = (score: number, label: string, color: string) => {
+    const safeScore = Math.max(0, Math.min(5, score)) // Clamp between 0-5
     return (
       <div className="space-y-1.5">
         <div className="flex items-center justify-between">
           <span className="text-xs font-medium text-foreground">{label}</span>
-          <span className="text-xs font-bold text-foreground">{score}/5</span>
+          <span className="text-xs font-bold text-foreground">{safeScore}/5</span>
         </div>
         <div className="flex gap-1">
           {[0, 1, 2, 3, 4, 5].map((level) => (
             <div
               key={level}
-              className={`h-2 flex-1 rounded-sm transition-colors ${level <= score ? color : "bg-muted"}`}
+              className={`h-2 flex-1 rounded-sm transition-colors ${level <= safeScore ? color : "bg-muted"}`}
             />
           ))}
         </div>
@@ -124,10 +127,10 @@ export function LinkageScaleLegend() {
                       item.score === 0
                         ? "bg-muted text-muted-foreground"
                         : item.score <= 2
-                          ? "bg-amber-100 text-amber-700"
-                          : item.score <= 4
-                            ? "bg-blue-100 text-blue-700"
-                            : "bg-green-100 text-green-700"
+                        ? "bg-amber-100 text-amber-700"
+                        : item.score <= 4
+                        ? "bg-blue-100 text-blue-700"
+                        : "bg-green-100 text-green-700"
                     }`}
                   >
                     {item.score}

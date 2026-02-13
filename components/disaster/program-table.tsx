@@ -10,12 +10,11 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Progress } from "@/components/ui/progress"
 
-// ✅ Fixed import: use 'educationPrograms' instead of 'educationData'
 import { DisasterDepartment, disasterPrograms, thematicAreas } from "@/lib/disaster-data"
 import { LinkageScale } from "./linkage-scale"
 import { ProjectPhase } from "./project-phase"
 import { Search, Filter, Eye, ChevronLeft, ChevronRight } from "lucide-react"
-type EducationProgram = typeof disasterPrograms[number]
+type disasterProgram = typeof disasterPrograms[number]
 
 const ITEMS_PER_PAGE = 10
 export interface ProgramTableProps {
@@ -30,7 +29,6 @@ export function ProgramTable({ programs, department }: ProgramTableProps) {
   const [currentPage, setCurrentPage] = useState(1)
   const [selectedProgram, setSelectedProgram] = useState<DisasterDepartment | null>(null)
 
-  // ✅ Use 'disasterPrograms' instead of 'educationPrograms'
   const filteredPrograms = disasterPrograms.filter((program: DisasterDepartment) => {
     const matchesSearch =
       program.programName.toLowerCase().includes(search.toLowerCase()) ||

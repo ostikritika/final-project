@@ -36,7 +36,6 @@ export interface DisasterDepartment {
   }
 }
 
-// Example thematic areas for education
 export const thematicAreas = [
     {
     id: "preparedness-risk-reduction",
@@ -77,7 +76,7 @@ export const thematicAreas = [
     name: "Capacity Building & Awareness",
     nameNp: "क्षमता विकास तथा जनचेतना",
     color: "#3B82F6",
-    standards: {
+    standards:{
       sdg: ["SDG 11.b"],
       iso: ["ISO 37120:6.4"],
       sci: ["Pillar 4 - Human Capital Development"],
@@ -142,7 +141,6 @@ function generateProjectPhase(): { phase: "inception" | "approval" | "tender" | 
   return { phase, progress }
 }
 
-// Example education programs
 export const disasterPrograms: DisasterDepartment[] = [
   {
     id: "1",
@@ -175,7 +173,7 @@ export const disasterPrograms: DisasterDepartment[] = [
     sci2025: { direct: "pillar no=3 componentno=3.2 I-042", indirect: "" },
     thematicArea: "capacity-awareness",
     cycle: "",
-    linkageScores: { sdgScore: 4, isoScore: 3, sciScore: 4, linkageType: "concurrence" },
+    linkageScores: { sdgScore: 4, isoScore: 3, sciScore: 4, linkageType: "research" },
     projectPhase: generateProjectPhase(),
   },
   {
@@ -192,7 +190,7 @@ export const disasterPrograms: DisasterDepartment[] = [
     sci2025: { direct: "pillar no=3 componentno=3.1 I-040", indirect: "" },
     thematicArea: "preparedness-risk-reduction",
     cycle: "",
-    linkageScores: { sdgScore: 4, isoScore: 3, sciScore: 4, linkageType: "concurrence" },
+    linkageScores: { sdgScore: 4, isoScore: 3, sciScore: 4, linkageType: "research" },
     projectPhase: generateProjectPhase(),
   },
   {
@@ -209,7 +207,7 @@ export const disasterPrograms: DisasterDepartment[] = [
     sci2025: { direct: "pillar no=3 componentno=3.3 I-045", indirect: "" },
     thematicArea: "preparedness-risk-reduction",
     cycle: "",
-    linkageScores: { sdgScore: 4, isoScore: 3, sciScore: 4, linkageType: "concurrence" },
+    linkageScores: { sdgScore: 4, isoScore: 3, sciScore: 4, linkageType: "declaration"},
     projectPhase: generateProjectPhase(),
   },
   {
@@ -226,7 +224,7 @@ export const disasterPrograms: DisasterDepartment[] = [
     sci2025: { direct: "pillar no=3 componentno=3.3 I-045", indirect: "" },
     thematicArea: "preparedness-risk-reduction",
     cycle: "",
-    linkageScores: { sdgScore: 4, isoScore: 3, sciScore: 4, linkageType: "concurrence" },
+    linkageScores: { sdgScore: 4, isoScore: 3, sciScore: 4, linkageType: "discussion" },
     projectPhase: generateProjectPhase(),
   },
   {
@@ -895,43 +893,51 @@ export const disasterPrograms: DisasterDepartment[] = [
 },
 ]
 
-
-// Example education indicators
 export const keyIndicators = [
   {
-    id: "sdg-4-1",
+    id: "sdg-11-b-1",
     standard: "SDG",
-    code: "4.1",
-    name: "Literacy Rate",
-    nameNp: "साक्षरता दर",
-    description: "Percentage of children completing primary education",
-    relatedPrograms: 15,
+    code: "11.b.1",
+    name: "Disaster Management Training",
+    nameNp: "विपद् व्यवस्थापन तालिम",
+    description: "Programs providing disaster management training to staff and citizens",
+    relatedPrograms: 6, // e.g., Programs 1,2,7,8,11,12
+  },
+    {
+    id: "sdg-11-5-1",
+    standard: "SDG",
+    code: "11.5.1",
+    name: "Disaster Response & Recovery",
+    nameNp: "विपद् प्रतिक्रिया तथा पुनःनिर्माण",
+    description: "Programs focusing on emergency response, search & rescue, and recovery",
+    relatedPrograms: 10, // e.g., Programs 3,9,10,15,21,24,30,42,43
   },
   {
-    id: "sdg-4-c",
+    id: "sdg-11-5-2",
     standard: "SDG",
-    code: "4.c",
-    name: "Teacher Development",
-    nameNp: "शिक्षक विकास",
-    description: "Increase number of trained teachers in primary and secondary schools",
-    relatedPrograms: 10,
+    code: "11.5.2",
+    name: "Disaster Preparedness Infrastructure",
+    nameNp: "विपद् पूर्व तयारी पूर्वाधार",
+    description: "Programs providing equipment, stockpiling, and infrastructure for disaster mitigation",
+    relatedPrograms: 9, // e.g., Programs 4,5,18,19,20,22,23,25,27
   },
   {
-    id: "iso-13-1",
+    id: "iso-7-em",
     standard: "ISO 37120",
-    code: "13.1",
-    name: "School Enrollment",
-    nameNp: "विद्यालय नामांकन",
-    description: "Percentage of children enrolled in school",
-    relatedPrograms: 12,
+    code: "7.EM",
+    name: "Emergency Management Systems",
+    nameNp: "आपतकालीन व्यवस्थापन प्रणाली",
+    description: "Programs aligned with ISO 37120 emergency management indicators",
+    relatedPrograms: 35, // most programs with iso37120 direct="7.EM..."
   },
   {
-    id: "sci-4-5",
+    id: "sci-3-3",
     standard: "SCI 2025",
-    code: "Pillar 4.5",
-    name: "Digital Education Systems",
-    nameNp: "डिजिटल शिक्षा प्रणाली",
-    description: "Smart classrooms and e-learning adoption",
-    relatedPrograms: 8,
+    code: "Pillar 3.3",
+    name: "Fire and Emergency Equipment",
+    nameNp: "दमकल र आपतकालीन उपकरण",
+    description: "Programs involving fire trucks, dry risers, hydrants, and emergency gear",
+    relatedPrograms: 12, // Programs 4,5,22,23,26,29,30,31,33,37,38,39
   },
-]
+];
+
