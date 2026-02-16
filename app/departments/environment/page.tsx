@@ -1,14 +1,14 @@
-import { DashboardHeader } from "@/components/kmc-dashboard/header"
-import { StatsCards } from "@/components/kmc-dashboard/stats-cards"
-import { ThematicOverview } from "@/components/kmc-dashboard/thematic-overview"
-import { LinkageScaleLegend } from "@/components/kmc-dashboard/linkage-scale"
-import { ProjectPhaseLegend } from "@/components/kmc-dashboard/project-phase"
-import { ProgramTable } from "@/components/kmc-dashboard/program-table"
-import { IndicatorsPanel } from "@/components/kmc-dashboard/indicators-panel"
-import { ThematicDistributionChart, PhaseDistributionChart, LinkageScoreChart } from "@/components/kmc-dashboard/charts"
+import { DashboardHeader } from "@/components/environment-dashboard/header"
+import { StatsCards } from "@/components/environment-dashboard/stats-cards"
+import { ThematicOverview } from "@/components/environment-dashboard/thematic-overview"
+import { LinkageScaleLegend } from "@/components/environment-dashboard/linkage-scale"
+import { ProjectPhaseLegend } from "@/components/environment-dashboard/project-phase"
+import { ProgramTable } from "@/components/environment-dashboard/program-table"
+import { IndicatorsPanel } from "@/components/environment-dashboard/indicators-panel"
+import { ThematicDistributionChart, PhaseDistributionChart, LinkageScoreChart } from "@/components/environment-dashboard/charts"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
-export default function HealthDepartmentPage() {
+export default function EnvironmentDepartmentPage() {
   return (
     <div className="min-h-screen bg-background">
       <DashboardHeader />
@@ -57,7 +57,7 @@ export default function HealthDepartmentPage() {
       {/* Footer */}
       <footer className="border-t border-border mt-8 py-6 bg-card">
         <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-          <p>© 2026 Kathmandu Metropolitan City | स्वास्थ्य विभाग | Health Department</p>
+          <p>© 2026 Kathmandu Metropolitan City | वातावरण व्यवस्थापन विभाग | Environment Management Department</p>
           <p className="mt-1">Program Mapping System  - Aligned with SDG, ISO 37120, and SCI 2025</p>
         </div>
       </footer>

@@ -96,7 +96,20 @@ export const departments: Department[] = [
     href: "/departments/disaster",
 
   },
-
+  {
+    id: "environment",
+    name: "Environment Management Department",
+    nameNepali: "वातावरण व्यवस्थापन विभाग",
+    description: "Environmental protection, parks, green spaces, and pollution control",
+    icon: TreePine,
+    color: "text-green-600",
+    bgColor: "bg-green-50",
+    borderColor: "border-green-200",
+    programs: 149,
+    budget: "NPR 1,344,970,000",
+    status: "active",
+    href: "/departments/environment",
+  },
 
   {
     id: "administration",
@@ -196,20 +209,6 @@ export const departments: Department[] = [
     budget: "NPR 263,020,000",
     status: "inactive",
     href: "/departments/infrastructure",
-  },
-  {
-    id: "environment",
-    name: "Environment Management Department",
-    nameNepali: "वातावरण व्यवस्थापन विभाग",
-    description: "Environmental protection, parks, green spaces, and pollution control",
-    icon: TreePine,
-    color: "text-green-600",
-    bgColor: "bg-green-50",
-    borderColor: "border-green-200",
-    programs: 149,
-    budget: "NPR 1,344,970,000",
-    status: "inactive",
-    href: "/departments/environment",
   },
   {
     id: "it",
