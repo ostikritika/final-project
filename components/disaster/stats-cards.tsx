@@ -160,7 +160,7 @@ export function StatsCards({ department }: StatsCardsProps) {
     {
       title: "Total Budget",
       titleNp: "कुल बजेट",
-      value: `रु. ${(totalBudget / 1000).toFixed(1)} करोड`,
+      value: `रु. ${(totalBudget / 10000000).toFixed(1)} करोड`,
       icon: DollarSign,
       color: "text-green-600",
       bgColor: "bg-green-50",
