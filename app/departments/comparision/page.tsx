@@ -98,6 +98,15 @@ export default function Page() {
                 Coverage: {ward.percentage}%
               </p>
 
+<p className="text-sm text-gray-700">
+                Total  ward population: {ward.population}
+              </p>
+              <p className="text-sm text-gray-700">
+                Insured population: {ward.insuredPopulation}
+              </p>
+
+
+
               {/* Analytical Statements */}
               <p className="text-sm text-gray-700">
                 The ward falls short of the minimum standard by{" "}
@@ -113,6 +122,8 @@ export default function Page() {
                 </strong>{" "}
                 below the target benchmark.
               </p>
+
+              
 
               {/* Status */}
               <p className="text-sm">

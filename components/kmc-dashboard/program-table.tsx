@@ -4,280 +4,280 @@ import { useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table"
 import { Progress } from "@/components/ui/progress"
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import { kmcPrograms, thematicAreas, type KMCProgram } from "@/lib/kmc-data"
-import { Search, Filter, Eye, ChevronLeft, ChevronRight } from "lucide-react"
+import { ChevronLeft, ChevronRight, Eye } from "lucide-react"
 
 const ITEMS_PER_PAGE = 10
 
-// Simplified colors
-const SDG_COLOR = "#4CAF50" // green
-const ISO_COLOR = "#2196F3" // blue
-
 export function ProgramTable() {
   const [search, setSearch] = useState("")
-  const [thematicFilter, setThematicFilter] = useState<string>("all")
-  const [phaseFilter, setPhaseFilter] = useState<string>("all")
+  const [thematicFilter, setThematicFilter] = useState("all")
+  const [phaseFilter, setPhaseFilter] = useState("all")
   const [currentPage, setCurrentPage] = useState(1)
   const [showStandardsDetails, setShowStandardsDetails] = useState(false)
+  const [selectedProgram, setSelectedProgram] = useState<KMCProgram | null>(null)
 
-  // --- Filter programs ---
+  // =========================
+  // Filtering
+  // =========================
+
   const filteredPrograms = kmcPrograms.filter((program) => {
     const matchesSearch =
       program.programName.toLowerCase().includes(search.toLowerCase()) ||
       program.mainProgram.toLowerCase().includes(search.toLowerCase())
-    const matchesThematic = thematicFilter === "all" || program.thematicArea === thematicFilter
-    const matchesPhase = phaseFilter === "all" || program.projectPhase.phase === phaseFilter
+
+    const matchesThematic =
+      thematicFilter === "all" || program.thematicArea === thematicFilter
+
+    const matchesPhase =
+      phaseFilter === "all" || program.projectPhase.phase === phaseFilter
+
     return matchesSearch && matchesThematic && matchesPhase
   })
 
-  // --- Count standards ---
+  // =========================
+  // COUNTING LOGIC
+  // =========================
+
   const countStandards = (programs: KMCProgram[]) => {
     const sdgCount: Record<string, number> = {}
     const isoCount: Record<string, number> = {}
     const sciCount: Record<string, number> = {}
 
+    let sdgPrograms = 0
+    let isoPrograms = 0
+    let sciPrograms = 0
+
+    // Get all possible codes from programs
+    const allSDG: Set<string> = new Set()
+    const allISO: Set<string> = new Set()
+    const allSCI: Set<string> = new Set()
+
     programs.forEach((program) => {
-      // SDG
-      if (program.sdg) {
-        const sdgs = [program.sdg.direct, program.sdg.indirect]
-        sdgs.forEach((sdg) => {
-          if (sdg && sdg !== "No") {
-            const code = sdg.replace(/[()]/g, "")
-            sdgCount[code] = (sdgCount[code] || 0) + 1
-          }
-        })
-      }
+      const sdgValues = [program.sdg?.direct, program.sdg?.indirect].filter(Boolean)
+      const isoValues = [program.iso37120?.direct, program.iso37120?.indirect].filter(Boolean)
+      const sciValues = [program.sci2025?.direct, program.sci2025?.indirect].filter(Boolean)
 
-      // ISO
-      if (program.iso37120) {
-        const isos = [program.iso37120.direct, program.iso37120.indirect]
-        isos.forEach((iso) => {
-          if (iso && iso !== "No") {
-            isoCount[iso] = (isoCount[iso] || 0) + 1
-          }
-        })
-      }
-
-      // SCI
-      if (program.sci2025) {
-        const scis = [program.sci2025.direct, program.sci2025.indirect]
-        scis.forEach((sci) => {
-          if (sci && sci !== "No") {
-            sciCount[sci] = (sciCount[sci] || 0) + 1
-          }
-        })
-      }
+      sdgValues.forEach((v) => allSDG.add(v!.replace(/[()]/g, "")))
+      isoValues.forEach((v) => allISO.add(v!))
+      sciValues.forEach((v) => allSCI.add(v!))
     })
 
-    return { sdgCount, isoCount, sciCount }
+    // Count programs
+    programs.forEach((program) => {
+      // SDG
+      let touchedSDG = false
+      const sdgValues = [program.sdg?.direct, program.sdg?.indirect]
+
+      sdgValues.forEach((value) => {
+        if (value && value !== "No") {
+          touchedSDG = true
+          const clean = value.replace(/[()]/g, "")
+          sdgCount[clean] = (sdgCount[clean] || 0) + 1
+        }
+      })
+      if (touchedSDG) sdgPrograms++
+
+      // ISO
+      let touchedISO = false
+      const isoValues = [program.iso37120?.direct, program.iso37120?.indirect]
+
+      isoValues.forEach((value) => {
+        if (value && value !== "No") {
+          touchedISO = true
+          isoCount[value] = (isoCount[value] || 0) + 1
+        }
+      })
+      if (touchedISO) isoPrograms++
+
+      // SCI
+      let touchedSCI = false
+      const sciValues = [program.sci2025?.direct, program.sci2025?.indirect]
+      sciValues.forEach((value) => {
+        if (value && value !== "No") touchedSCI = true
+      })
+      if (touchedSCI) sciPrograms++
+    })
+
+    // Include untouched codes with count = 0
+    allSDG.forEach((code) => { if (!sdgCount[code]) sdgCount[code] = 0 })
+    allISO.forEach((code) => { if (!isoCount[code]) isoCount[code] = 0 })
+    allSCI.forEach((code) => { if (!sciCount[code]) sciCount[code] = 0 })
+
+    return { sdgCount, isoCount, sciCount, sdgPrograms, isoPrograms, sciPrograms }
   }
 
   const standards = countStandards(filteredPrograms)
+
+  const sortEntries = (data: Record<string, number>) =>
+    Object.entries(data).sort((a, b) => b[1] - a[1]) // descending order
+
   const totalPages = Math.ceil(filteredPrograms.length / ITEMS_PER_PAGE)
-  const paginatedPrograms = filteredPrograms.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE)
 
-  const getThematicColor = (id: string) => {
-    const area = thematicAreas.find((a) => a.id === id)
-    return area?.color || "#6B7280"
-  }
-
-  const getThematicName = (id: string) => {
-    const area = thematicAreas.find((a) => a.id === id)
-    return area?.name || id
-  }
-
-  const getPhaseColor = (phase: string) => {
-    const colors: Record<string, string> = {
-      inception: "bg-gray-100 text-gray-700",
-      approval: "bg-blue-100 text-blue-700",
-      tender: "bg-amber-100 text-amber-700",
-      award: "bg-purple-100 text-purple-700",
-      completion: "bg-green-100 text-green-700",
-    }
-    return colors[phase] || "bg-gray-100 text-gray-700"
-  }
+  const paginatedPrograms = filteredPrograms.slice(
+    (currentPage - 1) * ITEMS_PER_PAGE,
+    currentPage * ITEMS_PER_PAGE
+  )
 
   return (
-    <Card className="border border-border">
-      <CardHeader className="pb-4">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-          <div>
-            <CardTitle className="text-lg font-semibold text-foreground">Program Registry / कार्यक्रम दर्ता</CardTitle>
-            <p className="text-sm text-muted-foreground mt-1">{filteredPrograms.length} programs found</p>
+    <Card>
+      <CardHeader>
+        <CardTitle>Program Registry</CardTitle>
 
-            {/* Summary badges */}
-            <div className="flex gap-4 mt-2 flex-wrap">
-              <Badge variant="outline">SDG: {Object.keys(standards.sdgCount).length}</Badge>
-              <Badge variant="outline">ISO: {Object.keys(standards.isoCount).length}</Badge>
-              <Badge variant="outline">SCI: {Object.keys(standards.sciCount).length}</Badge>
-            </div>
-
-            {/* Button to show details */}
-            <Button variant="outline" size="sm" className="mt-2" onClick={() => setShowStandardsDetails(!showStandardsDetails)}>
-              {showStandardsDetails ? "Hide Standards Details" : "Show Standards Details"}
-            </Button>
-
-            {/* Standards Details (SDG + ISO only) */}
-            {showStandardsDetails && (
-              <div className="mt-2 p-4 rounded-lg bg-muted/50 space-y-2 text-sm">
-                <h3 className="font-semibold text-foreground">SDG Programs</h3>
-                <div className="flex flex-wrap gap-2">
-                  {Object.entries(standards.sdgCount).map(([sdg, count]) => (
-                    <Badge key={sdg} style={{ backgroundColor: SDG_COLOR, color: "white" }}>
-                      {sdg}: {count}
-                    </Badge>
-                  ))}
-                </div>
-
-                <h3 className="font-semibold text-foreground mt-2">ISO Programs</h3>
-                <div className="flex flex-wrap gap-2">
-                  {Object.entries(standards.isoCount).map(([iso, count]) => (
-                    <Badge key={iso} style={{ backgroundColor: ISO_COLOR, color: "white" }}>
-                      {iso}: {count}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-            )}
+        {/* KPI */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-4 max-w-md">
+          <div className="border rounded-lg p-3">
+            <p className="text-xs">Programs touching SDG</p>
+            <p className="text-2xl font-bold text-green-600">{standards.sdgPrograms}</p>
           </div>
 
-          {/* Filters */}
-          <div className="flex flex-col sm:flex-row gap-3">
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-              <Input
-                placeholder="Search programs..."
-                value={search}
-                onChange={(e) => {
-                  setSearch(e.target.value)
-                  setCurrentPage(1)
-                }}
-                className="pl-9 w-full sm:w-64"
-              />
-            </div>
+          <div className="border rounded-lg p-3">
+            <p className="text-xs">Programs touching ISO</p>
+            <p className="text-2xl font-bold text-blue-600">{standards.isoPrograms}</p>
+          </div>
 
-            <Select
-              value={thematicFilter}
-              onValueChange={(v) => {
-                setThematicFilter(v)
-                setCurrentPage(1)
-              }}
-            >
-              <SelectTrigger className="w-full sm:w-44">
-                <Filter className="w-4 h-4 mr-2" />
-                <SelectValue placeholder="Thematic Area" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">All Areas</SelectItem>
-                {thematicAreas.map((area) => (
-                  <SelectItem key={area.id} value={area.id}>
-                    {area.name}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-
-            <Select
-              value={phaseFilter}
-              onValueChange={(v) => {
-                setPhaseFilter(v)
-                setCurrentPage(1)
-              }}
-            >
-              <SelectTrigger className="w-full sm:w-36">
-                <SelectValue placeholder="Phase" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">All Phases</SelectItem>
-                <SelectItem value="inception">Inception</SelectItem>
-                <SelectItem value="approval">Approval</SelectItem>
-                <SelectItem value="tender">Tender</SelectItem>
-                <SelectItem value="award">Award</SelectItem>
-                <SelectItem value="completion">Completion</SelectItem>
-              </SelectContent>
-            </Select>
+          <div className="border rounded-lg p-3">
+            <p className="text-xs">Programs touching SCI</p>
+            <p className="text-2xl font-bold text-amber-600">{standards.sciPrograms}</p>
           </div>
         </div>
+
+        <Button
+          className="mt-4"
+          variant="outline"
+          size="sm"
+          onClick={() => setShowStandardsDetails(!showStandardsDetails)}
+        >
+          {showStandardsDetails ? "Hide Standards Details" : "Show Standards Details"}
+        </Button>
       </CardHeader>
 
-      {/* Table */}
-      <CardContent>
-        <div className="overflow-x-auto">
+      <CardContent className="space-y-6">
+        {/* Standards Details */}
+        {showStandardsDetails && (
+          <div className="space-y-6">
+            {/* SDG Table */}
+            <div className="rounded-lg border overflow-x-auto">
+              <h3 className="p-3 font-semibold bg-gray-50 border-b">SDG Programs</h3>
+              <table className="w-full text-sm">
+                <thead className="bg-gray-100">
+                  <tr>
+                    <th className="px-4 py-2">SDG Code</th>
+                    <th className="px-4 py-2 text-right">Programs</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {sortEntries(standards.sdgCount).map(([code, count]) => (
+                    <tr key={code} className={`border-t hover:bg-gray-50 ${count === 0 ? "opacity-40" : ""}`}>
+                      <td className="px-4 py-2">{code}</td>
+                      <td className="px-4 py-2 text-right">{count}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            {/* ISO Table */}
+            <div className="rounded-lg border overflow-x-auto">
+              <h3 className="p-3 font-semibold bg-gray-50 border-b">ISO Programs</h3>
+              <table className="w-full text-sm">
+                <thead className="bg-gray-100">
+                  <tr>
+                    <th className="px-4 py-2">ISO Code</th>
+                    <th className="px-4 py-2 text-right">Programs</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {sortEntries(standards.isoCount).map(([code, count]) => (
+                    <tr key={code} className={`border-t hover:bg-gray-50 ${count === 0 ? "opacity-40" : ""}`}>
+                      <td className="px-4 py-2">{code}</td>
+                      <td className="px-4 py-2 text-right">{count}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            {/* SCI Table */}
+            <div className="rounded-lg border overflow-x-auto">
+              <h3 className="p-3 font-semibold bg-gray-50 border-b">SCI Programs</h3>
+              <table className="w-full text-sm">
+                <thead className="bg-gray-100">
+                  <tr>
+                    <th className="px-4 py-2">SCI Code</th>
+                    <th className="px-4 py-2 text-right">Programs</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {sortEntries(standards.sciCount).map(([code, count]) => (
+                    <tr key={code} className={`border-t hover:bg-gray-50 ${count === 0 ? "opacity-40" : ""}`}>
+                      <td className="px-4 py-2">{code}</td>
+                      <td className="px-4 py-2 text-right">{count}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
+
+        {/* Program Table */}
+        <div className="overflow-x-auto border rounded-lg">
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead className="w-16">ID</TableHead>
-                <TableHead className="min-w-75">Program Name</TableHead>
-                <TableHead className="w-32">Thematic</TableHead>
-                <TableHead className="w-28">Budget</TableHead>
-                <TableHead className="w-36">Linkage (SDG/ISO/SCI)</TableHead>
-                <TableHead className="w-32">Phase</TableHead>
-                <TableHead className="w-24">Progress</TableHead>
-                <TableHead className="w-16">Action</TableHead>
+                <TableHead>ID</TableHead>
+                <TableHead>Program Name</TableHead>
+                <TableHead>Budget</TableHead>
+                <TableHead>Phase</TableHead>
+                <TableHead>Progress</TableHead>
+                <TableHead>Action</TableHead>
               </TableRow>
             </TableHeader>
-
             <TableBody>
               {paginatedPrograms.map((program) => (
                 <TableRow key={program.id}>
-                  <TableCell className="font-mono text-xs">{program.id}</TableCell>
+                  <TableCell>{program.id}</TableCell>
+                  <TableCell>{program.programName}</TableCell>
+                  <TableCell>Rs {program.budget.toLocaleString()}</TableCell>
+                  <TableCell>{program.projectPhase.phase}</TableCell>
                   <TableCell>
-                    <p className="font-medium text-sm text-foreground line-clamp-2">{program.programName}</p>
-                    <p className="text-xs text-muted-foreground mt-0.5">{program.mainProgram}</p>
-                  </TableCell>
-                  <TableCell>
-                    <Badge
-                      variant="outline"
-                      className="text-xs"
-                      style={{
-                        borderColor: getThematicColor(program.thematicArea),
-                        color: getThematicColor(program.thematicArea),
-                      }}
-                    >
-                      {getThematicName(program.thematicArea).split(" ")[0]}
-                    </Badge>
-                  </TableCell>
-                  <TableCell className="font-mono text-xs">Rs {program.budget.toLocaleString()}</TableCell>
-                  <TableCell>
-                    <div className="flex items-center gap-1">
-                      <span className="w-6 h-6 flex items-center justify-center text-xs font-bold rounded bg-blue-100 text-blue-700">{program.linkageScores.sdgScore}</span>
-                      <span className="w-6 h-6 flex items-center justify-center text-xs font-bold rounded bg-green-100 text-green-700">{program.linkageScores.isoScore}</span>
-                      <span className="w-6 h-6 flex items-center justify-center text-xs font-bold rounded bg-amber-100 text-amber-700">{program.linkageScores.sciScore}</span>
-                    </div>
-                  </TableCell>
-                  <TableCell>
-                    <Badge className={`text-xs ${getPhaseColor(program.projectPhase.phase)}`}>{program.projectPhase.phase}</Badge>
-                  </TableCell>
-                  <TableCell>
-                    <div className="flex items-center gap-2">
-                      <Progress value={program.projectPhase.progress} className="h-2 w-16" />
-                      <span className="text-xs font-mono text-muted-foreground">{program.projectPhase.progress}%</span>
-                    </div>
+                    <Progress value={program.projectPhase.progress} className="w-24 h-2" />
                   </TableCell>
                   <TableCell>
                     <Dialog>
                       <DialogTrigger asChild>
-                        <Button variant="ghost" size="sm">
+                        <Button variant="ghost" size="sm" onClick={() => setSelectedProgram(program)}>
                           <Eye className="w-4 h-4" />
                         </Button>
                       </DialogTrigger>
-                      <DialogContent className="max-w-2xl">
+                      <DialogContent>
                         <DialogHeader>
-                          <DialogTitle className="text-lg">Program Details / कार्यक्रम विवरण</DialogTitle>
+                          <DialogTitle>Program Details</DialogTitle>
                         </DialogHeader>
-                        <div className="space-y-6 pt-4">
-                          <h3 className="font-semibold text-foreground">{program.programName}</h3>
-                          <p className="text-sm text-muted-foreground">{program.mainProgram}</p>
-                          <p className="text-sm">Budget: रु. {program.budget.toLocaleString()}</p>
-                          <p className="text-sm">Thematic Area: {getThematicName(program.thematicArea)}</p>
-                          <p className="text-sm">Phase: {program.projectPhase.phase}, Progress: {program.projectPhase.progress}%</p>
-                          <p className="text-sm">SDG: {program.sdg.direct}, ISO: {program.iso37120.direct}, SCI: {program.sci2025.direct}</p>
-                        </div>
+                        {selectedProgram && (
+                          <div className="space-y-3 text-sm pt-4">
+                            <p><strong>ID:</strong> {selectedProgram.id}</p>
+                            <p><strong>Name:</strong> {selectedProgram.programName}</p>
+                            <p><strong>Main Program:</strong> {selectedProgram.mainProgram}</p>
+                            <p><strong>Budget:</strong> Rs {selectedProgram.budget.toLocaleString()}</p>
+                            <p><strong>Phase:</strong> {selectedProgram.projectPhase.phase}</p>
+                            <p><strong>Progress:</strong> {selectedProgram.projectPhase.progress}%</p>
+                            <p><strong>SDG:</strong> {selectedProgram.sdg?.direct || "N/A"}</p>
+                            <p><strong>ISO:</strong> {selectedProgram.iso37120?.direct || "N/A"}</p>
+                            <p><strong>SCI:</strong> {selectedProgram.sci2025?.direct || "N/A"}</p>
+                          </div>
+                        )}
                       </DialogContent>
                     </Dialog>
                   </TableCell>
@@ -288,19 +288,26 @@ export function ProgramTable() {
         </div>
 
         {/* Pagination */}
-        <div className="flex items-center justify-between mt-4 pt-4 border-t border-border">
-          <p className="text-sm text-muted-foreground">
-            Showing {(currentPage - 1) * ITEMS_PER_PAGE + 1} to {Math.min(currentPage * ITEMS_PER_PAGE, filteredPrograms.length)} of {filteredPrograms.length}
-          </p>
-          <div className="flex items-center gap-2">
-            <Button variant="outline" size="sm" onClick={() => setCurrentPage((p) => Math.max(1, p - 1))} disabled={currentPage === 1}>
-              <ChevronLeft className="w-4 h-4" />
-            </Button>
-            <span className="text-sm text-foreground">Page {currentPage} of {totalPages}</span>
-            <Button variant="outline" size="sm" onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))} disabled={currentPage === totalPages}>
-              <ChevronRight className="w-4 h-4" />
-            </Button>
-          </div>
+        <div className="flex justify-between items-center pt-4">
+          <Button
+            variant="outline"
+            size="sm"
+            disabled={currentPage === 1}
+            onClick={() => setCurrentPage((p) => p - 1)}
+          >
+            <ChevronLeft size={16} />
+          </Button>
+          <span className="text-sm">
+            Page {currentPage} of {totalPages}
+          </span>
+          <Button
+            variant="outline"
+            size="sm"
+            disabled={currentPage === totalPages}
+            onClick={() => setCurrentPage((p) => p + 1)}
+          >
+            <ChevronRight size={16} />
+          </Button>
         </div>
       </CardContent>
     </Card>
