@@ -55,7 +55,7 @@ export const wardEducationData: WardEducationData[] = [
   { wardNumber: 15, students: 420, teachers: 50 },
   { wardNumber: 16, students: 530, teachers: 60 },
   { wardNumber: 17, students: 610, teachers: 30 },
-  { wardNumber: 18, students: 460, teachers: 30},
+  { wardNumber: 18, students: 460, teachers: 30 },
   { wardNumber: 19, students: 590, teachers: 30 },
   { wardNumber: 20, students: 440, teachers: 40 },
   { wardNumber: 21, students: 510, teachers: 40 },
@@ -68,12 +68,12 @@ export const wardEducationData: WardEducationData[] = [
   { wardNumber: 28, students: 470, teachers: 50 },
   { wardNumber: 29, students: 560, teachers: 50 },
   { wardNumber: 30, students: 520, teachers: 50 },
-  { wardNumber: 31, students: 480, teachers: 55},
+  { wardNumber: 31, students: 480, teachers: 55 },
   { wardNumber: 32, students: 600, teachers: 60 },
 ]
 
 // ===============================
-// Core Calculation Function
+// Core Calculation Function (Improved Logic with Correct Gaps)
 // ===============================
 
 export function calculateEducationComparison(
@@ -84,37 +84,37 @@ export function calculateEducationComparison(
   const calculated = data.map((ward) => {
     const { students, teachers } = ward
 
+    // Student-Teacher Ratio
     const str = teachers > 0 ? students / teachers : 0
     const roundedSTR = +str.toFixed(2)
 
-    const minimumGap =
-      roundedSTR > standard.minimum
-        ? +(roundedSTR - standard.minimum).toFixed(2)
-        : 0
+    // Required teachers to meet target STR
+    const requiredTeachersForTarget = Math.ceil(
+      students / standard.target
+    )
 
-    const targetGap =
-      roundedSTR > standard.target
-        ? +(roundedSTR - standard.target).toFixed(2)
-        : 0
-
-    const compliancePercentage =
-      roundedSTR > 0
-        ? +((standard.target / roundedSTR) * 100).toFixed(2)
-        : 0
-
-    const requiredTeachersForTarget =
-      Math.ceil(students / standard.target)
-
+    // Additional teachers needed
     const additionalTeachersNeeded =
       requiredTeachersForTarget > teachers
         ? requiredTeachersForTarget - teachers
         : 0
 
+    // ✅ Corrected gaps (can be negative if under standard)
+    const minimumGap = +(roundedSTR - standard.minimum).toFixed(2)
+    const targetGap = +(roundedSTR - standard.target).toFixed(2)
+
+    // Compliance percentage based on required teachers
+    const compliancePercentage =
+      requiredTeachersForTarget > 0
+        ? +((teachers / requiredTeachersForTarget) * 100).toFixed(2)
+        : 100
+
+    // Status logic based on shortage severity
     let status: "Good" | "Moderate" | "Critical"
 
-    if (roundedSTR <= standard.target) {
+    if (additionalTeachersNeeded === 0) {
       status = "Good"
-    } else if (roundedSTR <= standard.minimum) {
+    } else if (additionalTeachersNeeded <= 5) {
       status = "Moderate"
     } else {
       status = "Critical"
@@ -133,8 +133,12 @@ export function calculateEducationComparison(
     }
   })
 
-  // Ranking (Worst STR gets higher priority rank)
-  const sorted = [...calculated].sort((a, b) => b.str - a.str)
+  // Ranking based on highest teacher shortage
+  const sorted = [...calculated].sort(
+    (a, b) =>
+      b.additionalTeachersNeeded -
+      a.additionalTeachersNeeded
+  )
 
   sorted.forEach((ward, index) => {
     ward.rank = index + 1
@@ -144,23 +148,49 @@ export function calculateEducationComparison(
 }
 
 // ===============================
-// City-wide Summary Function
+// City-wide Summary Function (Improved)
 // ===============================
 
 export function calculateCityEducationSummary(
-  data: WardEducationData[] = wardEducationData
+  data: WardEducationData[] = wardEducationData,
+  standard: EducationStandard = EDUCATION_STANDARD
 ) {
-  const totalStudents = data.reduce((sum, w) => sum + w.students, 0)
-  const totalTeachers = data.reduce((sum, w) => sum + w.teachers, 0)
+
+  const totalStudents = data.reduce(
+    (sum, ward) => sum + ward.students,
+    0
+  )
+
+  const totalTeachers = data.reduce(
+    (sum, ward) => sum + ward.teachers,
+    0
+  )
 
   const citySTR =
     totalTeachers > 0
       ? +(totalStudents / totalTeachers).toFixed(2)
       : 0
 
+  const requiredTeachersForTarget = Math.ceil(
+    totalStudents / standard.target
+  )
+
+  const additionalTeachersNeeded =
+    requiredTeachersForTarget > totalTeachers
+      ? requiredTeachersForTarget - totalTeachers
+      : 0
+
+  const compliancePercentage =
+    requiredTeachersForTarget > 0
+      ? +((totalTeachers / requiredTeachersForTarget) * 100).toFixed(2)
+      : 100
+
   return {
     totalStudents,
     totalTeachers,
     citySTR,
+    requiredTeachersForTarget,
+    additionalTeachersNeeded,
+    compliancePercentage,
   }
 }
